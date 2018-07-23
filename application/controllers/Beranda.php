@@ -25,7 +25,16 @@ class Beranda extends CI_Controller {
 	}
 	public function index()
 	{	
+		if($this->session->userdata('logged_in')){
+			$this->load->view('index');
+		}else{
+			redirect('login');
+		}
 		// $data['topcarwash'] = $this->Models->get_top_carwash()->result();
+		
+	}
+	public function beranda()
+	{	
 		$this->load->view('dashboard');
 	}
 

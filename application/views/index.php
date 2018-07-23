@@ -60,11 +60,11 @@
 <?php
 if ($this->session->userdata['logged_in']['jenis'] == 'Administrator') {
 
-	include 'layout/sidebar.php';
+    include 'layout/sidebar.php';
 } elseif ($this->session->userdata['logged_in']['jenis'] == 'Pemilik') {
-	include 'layout/sidebar-pemilik.php';
+    include 'layout/sidebar-pemilik.php';
 } else {
-	$this->load->view('kasir/layout/sidebar');
+    $this->load->view('kasir/layout/sidebar');
 }
 ?><!--/navigation : sidebar & header-->
 
