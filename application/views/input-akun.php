@@ -55,15 +55,15 @@
 <body class="fixed-nav">
 
     <!--navigation : sidebar & header-->
-    <?php 
-        if($this->session->userdata['logged_in']['jenis']=='Administrator'){
+    <?php
+if ($this->session->userdata['logged_in']['jenis'] == 'Administrator') {
 
-            include 'layout/sidebar.php'; 
-        }else{
-            include 'layout/sidebar-pemilik.php'; 
+	include 'layout/sidebar.php';
+} else {
+	include 'layout/sidebar-pemilik.php';
 
-        }
-    ?>
+}
+?>
     <!--/navigation : sidebar & header-->
 
     <!--main content wrapper-->
@@ -107,77 +107,115 @@
                                 </ul>
                             </div>
                             <form class="" id="default" method="post" action="<?php echo site_url('akun/input_data_akun'); ?>">
-                                <fieldset title="Step1" class="step" id="default-step-0">
+                                <fieldset title="Step 1" class="step" id="default-step-1" >
+                                    <legend> </legend>
+
+                                    <h5 class="mb-3">Informasi Carwash</h5>
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label col-form-label-sm">Nama Carwash</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" placeholder="Nama Carwash" name="nama_carwash" text="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label col-form-label-sm">No Izin</label>
+                                        <div class="col-sm-8">
+                                            <input type="number" class="form-control" placeholder="Kontak CarWash(HP/Telpon)" name="izin_carwash">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label col-form-label-sm">Kontak</label>
+                                        <div class="col-sm-8">
+                                            <input type="number" class="form-control" placeholder="Kontak CarWash(HP/Telpon)" name="kontak_carwash">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label col-form-label-sm">Alamat Lengkap</label>
+                                        <div class="col-sm-8">
+                                            <textarea class="form-control" name="alamat_carwash"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label col-form-label-sm">Deskripsi CarWash</label>
+                                        <div class="col-sm-8">
+                                            <textarea class="form-control" name="deskripsi"></textarea>
+                                        </div>
+                                    </div>
+
+                                </fieldset>
+
+                                <fieldset title="Step2" class="step" id="default-step-0">
                                     <legend> </legend>
                                     <h5 class="mb-3">Akun Pemilik</h5>
                                     <div class="form-group row">
                                         <label class="col-sm-4 col-form-label col-form-label-sm">Username</label>
                                         <div class="col-sm-8">
-                                            <input type="text" class="form-control" placeholder="Username" name="username">
+                                            <input type="text" class="form-control" placeholder="Username" name="username_pemilik">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-sm-4 col-form-label col-form-label-sm">Password</label>
                                         <div class="col-sm-8">
-                                            <input type="password" class="form-control" placeholder="Password" name="password">
-                                        </div>
-                                    </div>
-                                     <div class="form-group row">
-                                        <label class="col-sm-4 col-form-label col-form-label-sm">Username</label>
-                                        <div class="col-sm-8">
-                                            <input type="text" class="form-control" placeholder="Pemilik" name="level" text="Pemilik" disabled="true">
-                                        </div>
-                                    </div>
-
-                                </fieldset>
-                                <fieldset title="Step2" class="step" id="default-step-0">
-                                    <legend> </legend>
-                                    <h5 class="mb-3">Akun Kasir</h5>
-                                    <div class="form-group row">
-                                        <label class="col-sm-4 col-form-label col-form-label-sm">Username</label>
-                                        <div class="col-sm-8">
-                                            <input type="text" class="form-control" placeholder="Username" name="username">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col-sm-4 col-form-label col-form-label-sm">Password</label>
-                                        <div class="col-sm-8">
-                                            <input type="password" class="form-control" placeholder="Password" name="password">
-                                        </div>
-                                    </div>
-                                     <div class="form-group row">
-                                        <label class="col-sm-4 col-form-label col-form-label-sm">Username</label>
-                                        <div class="col-sm-8">
-                                            <input type="text" class="form-control" placeholder="Kasir" name="level" text="Kasir" disabled="true">
-                                        </div>
-                                    </div>
-
-                                </fieldset>
-                                <fieldset title="Step 3" class="step" id="default-step-1" >
-                                    <legend> </legend>
-                                   
-                                    <h5 class="mb-3">Personal Information</h5>
-                                    <div class="form-group row">
-                                        <label class="col-sm-4 col-form-label col-form-label-sm">Nama Carwash</label>
-                                        <div class="col-sm-8">
-                                            <input type="text" class="form-control" placeholder="Nama Carwash" name="nama" text="">
+                                            <input type="password" class="form-control" placeholder="Password" name="password_pemilik">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-sm-4 col-form-label col-form-label-sm">Nama Lengkap</label>
                                         <div class="col-sm-8">
-                                            <input type="text" class="form-control" placeholder="Nama Lengkap" name="nama" text="">
+                                            <input type="text" class="form-control" placeholder="Nama Lengkap" name="nama_pemilik" text="">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-sm-4 col-form-label col-form-label-sm">Email Address</label>
                                         <div class="col-sm-8">
-                                            <input type="text" class="form-control" placeholder="Email Address" name="email" text="">
+                                            <input type="text" class="form-control" placeholder="Email Address" name="email_pemilik" text="">
                                         </div>
                                     </div>
-                                   
+                                     <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label col-form-label-sm">Tipe</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" placeholder="Pemilik" name="level_pemilik" text="Pemilik" disabled="true">
+                                        </div>
+                                    </div>
+
+
                                 </fieldset>
-                                
+                                <fieldset title="Step3" class="step" id="default-step-0">
+                                    <legend> </legend>
+                                    <h5 class="mb-3">Akun Kasir</h5>
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label col-form-label-sm">Username</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" placeholder="Username" name="username_kasir">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label col-form-label-sm">Password</label>
+                                        <div class="col-sm-8">
+                                            <input type="password" class="form-control" placeholder="Password" name="password_kasir">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label col-form-label-sm">Nama Lengkap</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" placeholder="Nama Lengkap" name="nama_kasir" text="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label col-form-label-sm">Email Address</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" placeholder="Email Address" name="email_kasir" text="">
+                                        </div>
+                                    </div>
+                                     <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label col-form-label-sm">Tipe</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" placeholder="Kasir" name="level_kasir" text="Kasir" disabled="true">
+                                        </div>
+                                    </div>
+
+                                </fieldset>
+
                                 <input type="submit" class="finish btn btn-danger" value="Finish"/>
                             </form>
                         </div>
@@ -188,7 +226,7 @@
         </div>
 
         <!--footer-->
-        <?php include 'layout/footer.php'; ?>
+        <?php include 'layout/footer.php';?>
         <!--/footer-->
     </div>
     <!--/main content wrapper-->

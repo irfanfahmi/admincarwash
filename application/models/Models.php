@@ -11,6 +11,11 @@ class Models extends CI_Model {
 		}
 	}
 
+	public function insert_get_id($data, $tabel) {
+		$this->db->insert($tabel, $data);
+		return $this->db->insert_id();
+	}
+
 	function cek_login($username, $password) {
 		$status = 'Aktif';
 		$query = "username = " . "'" . $username . "' AND " . "password ='" . $password . "' AND " . " status = '" . $status . "'";
@@ -37,13 +42,34 @@ class Models extends CI_Model {
 		}
 	}
 
-	function sendEmail($receiver, $msg) {
+	function sendEmail($receiver, $subject, $msg) {
 
 		$from = "info.bpkad@gmail.com"; //senders email address
 		$subject = 'Pengumuman Instruksi Pelatihan'; //email subject
 
 		//sending confirmEmail($receiver) function calling link to the user, inside message body
-		$message = $msg;
+
+		// $this->load->library('email');
+		// $config = array();
+		// $config['charset'] = 'utf-8';
+		// $config['useragent'] = 'Codeigniter';
+		// $config['protocol'] = "smtp";
+		// $config['mailtype'] = "html";
+		// $config['smtp_host'] = "ssl://smtp.gmail.com";
+		// $config['smtp_port'] = "465";
+		// $config['smtp_timeout'] = "400";
+		// $config['smtp_user'] = $from;
+		// $config['smtp_pass'] = "Telkom123"; // password
+		// $config['crlf'] = "\r\n";
+		// $config['newline'] = "\r\n";
+		// $config['wordwrap'] = TRUE;
+		// $this->email->initialize($config);
+
+		// //konfigurasi pengiriman
+		// $this->email->from($config['smtp_user'], $from);
+		// $this->email->to($email);
+		// $this->email->subject($subject);
+		// $this->email->message($msg);
 
 		//config email settings
 		$config['protocol'] = 'smtp';
@@ -56,7 +82,6 @@ class Models extends CI_Model {
 		$config['wordwrap'] = 'TRUE';
 		$config['newline'] = "\r\n";
 
-		$this->load->library('email', $config);
 		$this->email->initialize($config);
 		//send email
 		$this->email->from($from);
@@ -121,7 +146,7 @@ class Models extends CI_Model {
 		return $this->db->get();
 	}
 
-	public function get_id_carwash($id_carwash = false){
+	public function get_id_carwash($id_carwash = false) {
 		$queri = $this->db->query("SELECT id_carwash,nama_pemilik,email FROM carwash WHERE id_carwash = $id_carwash");
 		return $queri->row_array();
 	}

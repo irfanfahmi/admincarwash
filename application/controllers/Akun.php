@@ -29,15 +29,10 @@ class Akun extends CI_Controller {
 		$this->load->view('data-akun', $data);
 	}
 
-	public function input_akun_pemilik() {
+	public function input_akun() {
 		// $data['carwash'] = $this->Models->get_id_carwash($id_carwash);
 		$data['carwash'] = $this->Models->get('carwash')->result();
 		$this->load->view('input-akun', $data);
-	}
-
-	public function input_akun_kasir() {
-		$data['carwash'] = $this->Models->get('carwash')->result();
-		$this->load->view('input_kasir', $data);
 	}
 
 	public function nonaktifkan_akun($id_akun) {
@@ -65,21 +60,44 @@ class Akun extends CI_Controller {
 	}
 
 	public function input_data_akun() {
-		$username = $this->input->post('username');
-		$password = $this->input->post('password');
-		$nama = $this->input->post('nama');
-		$email = $this->input->post('email');
-		$level = $this->input->post('level');
-
-		$data = array(
-			'username' => $username,
-			'password' => $password,
-			'nama_lengkap' => $nama,
-			'email' => $email,
-			'level' => $level,
+		$data_carwash = array(
+			'no_izin' => $this->input->post('izin_carwash'),
+			'nama' => $this->input->post('nama_carwash'),
+			'kontak' => $this->input->post('kontak_carwash'),
+			'email' => $this->input->post('email_pemilik'),
+			'nama_pemilik' => $this->input->post('nama_pemilik'),
+			'alamat' => $this->input->post('alamat_carwash'),
+			'deskripsi' => $this->input->post('deskripsi'),
+			'status' => 'Aktif',
 		);
 
-		$result = $this->Models->insert($data, 'akun');
+		$id_carwash = $this->Models->insert_get_id($data_carwash, 'carwash');
+
+		$data_pemilik = array(
+			'username' => $this->input->post('username_pemilik'),
+			'password' => $this->input->post('password_pemilik'),
+			'nama_lengkap' => $this->input->post('nama_pemilik'),
+			'email' => $this->input->post('email_pemilik'),
+			'level' => 'Pemilik',
+			'status' => 'Aktif',
+			'id_carwash' => $id_carwash,
+		);
+
+		$result = $this->Models->insert($data_pemilik, 'akun');
+
+		$data_kasir = array(
+			'username' => $this->input->post('username_kasir'),
+			'password' => $this->input->post('password_kasir'),
+			'nama_lengkap' => $this->input->post('nama_kasir'),
+			'email' => $this->input->post('email_kasir'),
+			'level' => 'Kasir',
+			'status' => 'Aktif',
+			'id_carwash' => $id_carwash,
+		);
+
+		$result = $this->Models->insert($data_kasir, 'akun');
+
+		// $result = $this->Models->insert($data, 'akun');
 		if ($result) {
 			$this->session->set_flashdata('msg', '<div class="alert alert-success" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong class="d-block d-sm-inline-block-force">Berhasil!</strong> Data Berhasil Tersimpan.</div>');
 		} else {

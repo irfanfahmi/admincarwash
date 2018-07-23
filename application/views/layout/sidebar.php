@@ -27,10 +27,12 @@
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Akun">
                 <a class="nav-link nav-link-collapse" data-toggle="collapse" data-target="#akunap">
                     <i class="icon-user-following"></i>
-                    <span class="nav-link-text">Pemilik</span>
+                    <span class="nav-link-text">Carwash</span>
                     </a>
                     <ul class="sidenav-second-level collapse" id="akunap" data-parent="#accordion">
                     <li> <a href="<?php echo site_url('akun/app_pemilik'); ?>">Approval</a> </li>
+                    <li> <a href="<?php echo site_url('akun/input_akun'); ?>">Input Akun</a> </li>
+
                 </ul>
                 </a>
 
@@ -43,7 +45,6 @@
                     <span class="nav-link-text">Akun </span>
                 </a>
                 <ul class="sidenav-second-level collapse" id="akun" data-parent="#accordion">
-                    <li> <a href="<?php echo site_url('akun/input_akun_kasir'); ?>">Input Akun Kasir</a> </li>
                     <li> <a href="<?php echo site_url('akun'); ?>">Data Akun</a> </li>
                 </ul>
 
