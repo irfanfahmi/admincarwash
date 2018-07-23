@@ -10,7 +10,7 @@
     <!--/brand name-->
 
     <!--brand mega menu-->
-    
+
     <!--/responsive rightside toogle-->
 
     <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -27,7 +27,7 @@
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Akun">
                 <a class="nav-link nav-link-collapse" data-toggle="collapse" data-target="#akunap">
                     <i class="icon-user-following"></i>
-                    <span class="nav-link-text">Approval Pemilik</span>
+                    <span class="nav-link-text">Pemilik</span>
                     </a>
                     <ul class="sidenav-second-level collapse" id="akunap" data-parent="#accordion">
                     <li> <a href="<?php echo site_url('akun/app_pemilik'); ?>">Approval</a> </li>
@@ -43,13 +43,13 @@
                     <span class="nav-link-text">Akun </span>
                 </a>
                 <ul class="sidenav-second-level collapse" id="akun" data-parent="#accordion">
-               <!--      <li> <a href="<?php echo site_url('akun/input_akun'); ?>">Input Akun</a> </li> -->
+                    <li> <a href="<?php echo site_url('akun/input_akun_kasir'); ?>">Input Akun Kasir</a> </li>
                     <li> <a href="<?php echo site_url('akun'); ?>">Data Akun</a> </li>
                 </ul>
 
             </li>
-            
-            
+
+
         </ul>
         <!--/left side nav-->
 
@@ -62,7 +62,7 @@
                 <a class="nav-link dropdown-toggle mr-lg-3" id="userNav" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <div class="user-thumb">
                         <img class="rounded-circle" src="<?php echo base_url(); ?>assets/img/avatar/avatar1.jpg" alt=""/>
-                        <?php echo $this->session->userdata['logged_in']['nama'].' ('.$this->session->userdata['logged_in']['jenis'].')'; ?>
+                        <?php echo $this->session->userdata['logged_in']['nama'] . ' (' . $this->session->userdata['logged_in']['jenis'] . ')'; ?>
                     </div>
                     <sap
                 </a>

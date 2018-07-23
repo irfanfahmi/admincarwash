@@ -110,10 +110,14 @@
                             <div class="form-group row">
                                     <label class="col-sm-4 col-form-label col-form-label-sm">Nama Carwash</label>
                                     <div class="col-sm-8">
-                                        <select class="form-control" name="carwash" hidden="true">
+                                        <select class="form-control" name="carwash" disabled>
                                             <option></option>
                                             <?php foreach ($carwash as $item): ?>
-                                                <option value="<?php echo $item->id_carwash ?>"><?php echo $item->nama ?></option>
+                                                <option value="<?php echo $item->id_carwash ?>" <?php if ($this->session->userdata('logged_in')['carwash'] == $item->id_carwash): ?>
+                                                    selected
+                                                <?php endif?>>
+                                                <?php echo $item->nama ?>
+                                                </option>
                                             <?php endforeach?>
                                         </select>
                                     </div>
@@ -125,7 +129,7 @@
                                         <input type="text" class="form-control" placeholder="Nama Pelanggan" name="nama_pemesan">
                                     </div>
                                 </div>
-                                
+
                                 <!-- <div class="form-group row">
                                     <label class="col-sm-4 col-form-label col-form-label-sm">Nama Pelanggan</label>
                                     <div class="col-sm-8">
