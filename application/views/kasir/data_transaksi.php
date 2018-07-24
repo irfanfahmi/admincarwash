@@ -118,8 +118,8 @@
                                         <td><?php echo $value->nama_pelanggan; ?></td>
                                         <td><?php echo $value->merk_mobil; ?></td>
                                         <td><?php echo $value->nopol; ?></td>
-                                        <td><?php echo $value->tanggal; ?></td>
-                                         <td><?php echo $value->jenis_cuci; ?></td>
+                                        <td><?php echo date("d F Y", strtotime($value->tanggal)); ?></td>
+                                         <td><?php echo $value->nama_tipe; ?></td>
                                         <!-- <td>
                                             <?php if ($value->id_pemesanan == 0): ?>
                                             Langsung
