@@ -34,6 +34,10 @@ class Akun extends CI_Controller {
 		$data['carwash'] = $this->Models->get('carwash')->result();
 		$this->load->view('input-akun', $data);
 	}
+	public function input_lokasi() {
+		
+		$this->load->view('input_lokasi');
+	}
 
 	public function nonaktifkan_akun($id_akun) {
 		$where = array('id_akun' => $id_akun);

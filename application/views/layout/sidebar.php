@@ -32,6 +32,7 @@
                     <ul class="sidenav-second-level collapse" id="akunap" data-parent="#accordion">
                     <li> <a href="<?php echo site_url('akun/app_pemilik'); ?>">Approval</a> </li>
                     <li> <a href="<?php echo site_url('akun/input_akun'); ?>">Input Akun</a> </li>
+                    <li> <a href="<?php echo site_url('akun/input_lokasi'); ?>">Input Lokasi</a> </li>
 
                 </ul>
                 </a>
