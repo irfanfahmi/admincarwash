@@ -31,7 +31,7 @@
                 </a>
                 <ul class="sidenav-second-level collapse" id="antri" data-parent="#accordion">
                     <li> <a href="<?php echo site_url('kasir/input_pesanan'); ?>">Input Pesanan</a> </li>
-                    <li> <a href="<?php echo site_url('kasir/pesanan'); ?>">Kelola Pesanan <span class="badge badge-danger">5</span> </a></li>
+                    <li> <a href="<?php echo site_url('kasir/pesanan'); ?>">Kelola Pesanan</a></li>
                 </ul>
             </li>
 

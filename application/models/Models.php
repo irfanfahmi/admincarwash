@@ -132,19 +132,22 @@ class Models extends CI_Model {
 		}
 	}
 
-	public function get_pemesanan() {
+	public function get_pemesanan($id_carwash) {
 		$this->db->from('pemesanan p');
 		$this->db->join('pelanggan pl', 'pl.id_pelanggan = p.id_pelanggan', 'left');
 		$this->db->join('tipe_cuci t', 't.id_tipe = p.id_tipe', 'left');
+		$this->db->where('id_carwash', $id_carwash);
+
 		return $this->db->get();
 	}
 
-	public function get_transaksi() {
+	public function get_transaksi($id_carwash) {
 		$this->db->select('t.id_transaksi, t.nama_pelanggan, t.nopol, t.merk_mobil, c.nama_tipe, t.tanggal, t.biaya');
 		$this->db->from('transaksi t');
 		// $this->db->join('pemesanan p', 'p.id_pemesanan = t.id_pemesanan', 'left');
 		// $this->db->join('pelanggan pl', 'pl.id_pelanggan = p.id_pelanggan', 'left');
 		$this->db->join('tipe_cuci c', 'c.id_tipe = t.jenis_cuci', 'left');
+		$this->db->where('id_carwash', $id_carwash);
 		$this->db->order_by('tanggal', 'desc');
 		return $this->db->get();
 	}

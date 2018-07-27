@@ -118,7 +118,8 @@ class Pemilik extends CI_Controller {
 	}
 
 	public function transaksi() {
-		$data['carwash'] = $this->Models->get_transaksi()->result();
+		$id_carwash = $this->session->userdata('logged_in')['carwash'];
+		$data['carwash'] = $this->Models->get_transaksi($id_carwash)->result();
 		$this->load->view('pemilik/data_transaksi', $data);
 	}
 }
