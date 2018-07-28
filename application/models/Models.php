@@ -156,5 +156,14 @@ class Models extends CI_Model {
 		$queri = $this->db->query("SELECT id_carwash,nama_pemilik,email FROM carwash WHERE id_carwash = $id_carwash");
 		return $queri->row_array();
 	}
+
+	public function get_waktu($id_carwash, $tanggal) {
+		$this->db->select('id_carwash, jam_cuci');
+		$this->db->from('pemesanan');
+		$this->db->where('id_carwash', $id_carwash);
+		$this->db->where('tanggal_cuci', $tanggal);
+		$this->db->order_by('jam_cuci', 'desc');
+		return $this->db->get();
+	}
 }
 ?>

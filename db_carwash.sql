@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 24, 2018 at 11:40 AM
+-- Generation Time: Jul 28, 2018 at 03:52 PM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 5.6.24
 
@@ -122,6 +122,7 @@ CREATE TABLE `pemesanan` (
   `plat_nomor` varchar(50) NOT NULL,
   `tanggal_pesan` date NOT NULL,
   `tanggal_cuci` date NOT NULL,
+  `jam_cuci` int(11) NOT NULL,
   `note` text NOT NULL,
   `total_biaya` int(11) NOT NULL,
   `uang_bayar` bigint(20) NOT NULL,
@@ -132,9 +133,9 @@ CREATE TABLE `pemesanan` (
 -- Dumping data for table `pemesanan`
 --
 
-INSERT INTO `pemesanan` (`id_pemesanan`, `id_pelanggan`, `id_carwash`, `nama_pemesan`, `id_tipe`, `jenis`, `plat_nomor`, `tanggal_pesan`, `tanggal_cuci`, `note`, `total_biaya`, `uang_bayar`, `status`) VALUES
-(7, 0, 0, 'Joko', 1, 'Kijang', 'B 2019 WKK', '2018-07-23', '2018-07-25', 'Asal Bersih', 100000, 50000, 'dp'),
-(8, 0, 0, 'Bargundi', 2, 'Avanza', 'B 123 BK', '2018-07-23', '2018-07-24', 'Langsung', 150000, 150000, 'lunas');
+INSERT INTO `pemesanan` (`id_pemesanan`, `id_pelanggan`, `id_carwash`, `nama_pemesan`, `id_tipe`, `jenis`, `plat_nomor`, `tanggal_pesan`, `tanggal_cuci`, `jam_cuci`, `note`, `total_biaya`, `uang_bayar`, `status`) VALUES
+(7, 0, 1, 'Joko', 1, 'Kijang', 'B 2019 WKK', '2018-07-23', '2018-07-25', 10, 'Asal Bersih', 100000, 50000, 'dp'),
+(8, 0, 7, 'Bargundi', 2, 'Avanza', 'B 123 BK', '2018-07-23', '2018-07-24', 10, 'Langsung', 150000, 150000, 'lunas');
 
 -- --------------------------------------------------------
 
@@ -166,6 +167,7 @@ INSERT INTO `tipe_cuci` (`id_tipe`, `nama_tipe`, `harga`) VALUES
 CREATE TABLE `transaksi` (
   `id_transaksi` int(11) NOT NULL,
   `id_pemesanan` int(11) NOT NULL,
+  `id_carwash` int(11) NOT NULL,
   `nama_pelanggan` varchar(123) NOT NULL,
   `nopol` varchar(123) NOT NULL,
   `jenis_cuci` varchar(123) NOT NULL,
@@ -179,11 +181,11 @@ CREATE TABLE `transaksi` (
 -- Dumping data for table `transaksi`
 --
 
-INSERT INTO `transaksi` (`id_transaksi`, `id_pemesanan`, `nama_pelanggan`, `nopol`, `jenis_cuci`, `merk_mobil`, `status`, `tanggal`, `biaya`) VALUES
-(1, 0, '', '', '', '', '', '2018-07-17', 100000),
-(2, 0, '', '', '', '', '', '2018-07-12', 150000),
-(3, 0, 'koko', 'B 1319 WK', '3', 'Honda Brio', '', '2018-07-12', 200000),
-(4, 0, 'kiki', 'B 1343 WK', '2', 'Honda Agya', '', '2018-08-01', 150000);
+INSERT INTO `transaksi` (`id_transaksi`, `id_pemesanan`, `id_carwash`, `nama_pelanggan`, `nopol`, `jenis_cuci`, `merk_mobil`, `status`, `tanggal`, `biaya`) VALUES
+(1, 0, 1, '', '', '', '', '', '2018-07-17', 100000),
+(2, 0, 1, '', '', '', '', '', '2018-07-12', 150000),
+(3, 0, 7, 'koko', 'B 1319 WK', '3', 'Honda Brio', '', '2018-07-12', 200000),
+(4, 0, 1, 'kiki', 'B 1343 WK', '2', 'Honda Agya', '', '2018-08-01', 150000);
 
 --
 -- Indexes for dumped tables

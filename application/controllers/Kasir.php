@@ -35,27 +35,42 @@ class Kasir extends CI_Controller {
 	}
 
 	public function input_pesanan() {
+		date_default_timezone_set('Asia/Jakarta');
+		$tanggal = date('Y-m-d', time());
+		$id_carwash = $this->session->userdata('logged_in')['carwash'];
 		$data['pelanggan'] = $this->Models->get('pelanggan')->result();
 		$data['jenis'] = $this->Models->get('tipe_cuci')->result();
 		$data['carwash'] = $this->Models->get('carwash')->result();
+		$data['pesanan'] = $this->Models->get_waktu($id_carwash, $tanggal)->result();
 		$this->load->view('kasir/input_pesanan', $data);
+	}
+
+	public function get_waktu() {
+		$tanggal = $this->input->post('tanggal');
+		$id_carwash = $this->session->userdata('logged_in')['carwash'];
+		$waktu = $this->Models->get_waktu($id_carwash, $tanggal)->result();
+
+		echo json_encode($waktu);
 	}
 
 	public function proses_pesanan() {
 		date_default_timezone_set('Asia/Jakarta');
-		// $tanggal = $this->input->post('tanggal_cuci');
+		$id_carwash = $this->session->userdata('logged_in')['carwash'];
+		$tanggal = $this->input->post('tanggal_cuci');
+		$jam_cuci = $this->input->post('waktu');
 
 		// $dateObj = DateTime::createFromFormat('!Y-!m-!d', $i);
 
 		$data = array(
-			'id_carwash' => $this->input->post('carwash'),
+			'id_carwash' => $id_carwash,
 			//'id_pelanggan' => $this->input->post('pelanggan'),
 			'id_tipe' => $this->input->post('jenis'),
 			'nama_pemesan' => $this->input->post('nama_pemesan'),
 			'jenis' => $this->input->post('merk'),
 			'plat_nomor' => $this->input->post('no_plat'),
 			'tanggal_pesan' => date('Y-m-d', time()),
-			'tanggal_cuci' => $this->input->post('tanggal_cuci'),
+			'tanggal_cuci' => $tanggal,
+			'jam_cuci' => $jam_cuci,
 			'total_biaya' => $this->input->post('biaya'),
 			'status' => $this->input->post('status'),
 			'uang_bayar' => $this->input->post('uang'),
@@ -64,13 +79,21 @@ class Kasir extends CI_Controller {
 
 		// echo "<pre>";
 		// print_r($data);
-
-		$insert = $this->Models->insert($data, 'pemesanan');
-		if ($insert) {
-			$this->session->set_flashdata('msg', '<div class="alert alert-success" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong class="d-block d-sm-inline-block-force">Berhasil!</strong> Data Berhasil Tersimpan.</div>');
-		} else {
-			$this->session->set_flashdata('msg', '<div class="alert alert-danger" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong class="d-block d-sm-inline-block-force">Gagal!</strong> Data Tidak Tersimpan.</div>');
+		$insert = null;
+		$cek_waktu = $this->Models->get_waktu($id_carwash, $tanggal)->result();
+		foreach ($cek_waktu as $item) {
+			if ($item->jam_cuci == $jam_cuci) {
+				$this->session->set_flashdata('msg', '<div class="alert alert-danger" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong class="d-block d-sm-inline-block-force">Gagal!</strong> Data tidak dapat disimpan. Silahkan ubah jam cuci!</div>');
+			} else {
+				$insert = $this->Models->insert($data, 'pemesanan');
+				if ($insert) {
+					$this->session->set_flashdata('msg', '<div class="alert alert-success" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong class="d-block d-sm-inline-block-force">Berhasil!</strong> Data Berhasil Tersimpan.</div>');
+				} else {
+					$this->session->set_flashdata('msg', '<div class="alert alert-danger" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong class="d-block d-sm-inline-block-force">Gagal!</strong> Data Tidak Tersimpan.</div>');
+				}
+			}
 		}
+		// print_r($cek_waktu);
 
 		redirect('Kasir/input_pesanan', 'refresh');
 	}
