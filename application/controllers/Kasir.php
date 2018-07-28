@@ -81,18 +81,23 @@ class Kasir extends CI_Controller {
 		// print_r($data);
 		$insert = null;
 		$cek_waktu = $this->Models->get_waktu($id_carwash, $tanggal)->result();
+		$status = true;
 		foreach ($cek_waktu as $item) {
 			if ($item->jam_cuci == $jam_cuci) {
+				$status = false;
 				$this->session->set_flashdata('msg', '<div class="alert alert-danger" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong class="d-block d-sm-inline-block-force">Gagal!</strong> Data tidak dapat disimpan. Silahkan ubah jam cuci!</div>');
-			} else {
-				$insert = $this->Models->insert($data, 'pemesanan');
-				if ($insert) {
-					$this->session->set_flashdata('msg', '<div class="alert alert-success" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong class="d-block d-sm-inline-block-force">Berhasil!</strong> Data Berhasil Tersimpan.</div>');
-				} else {
-					$this->session->set_flashdata('msg', '<div class="alert alert-danger" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong class="d-block d-sm-inline-block-force">Gagal!</strong> Data Tidak Tersimpan.</div>');
-				}
 			}
 		}
+
+		if ($status) {
+			$insert = $this->Models->insert($data, 'pemesanan');
+			if ($insert) {
+				$this->session->set_flashdata('msg', '<div class="alert alert-success" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong class="d-block d-sm-inline-block-force">Berhasil!</strong> Data Berhasil Tersimpan.</div>');
+			} else {
+				$this->session->set_flashdata('msg', '<div class="alert alert-danger" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong class="d-block d-sm-inline-block-force">Gagal!</strong> Data Tidak Tersimpan.</div>');
+			}
+		}
+
 		// print_r($cek_waktu);
 
 		redirect('Kasir/input_pesanan', 'refresh');
