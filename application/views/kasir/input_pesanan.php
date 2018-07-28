@@ -52,6 +52,10 @@
     <!--jquery dropdown-->
     <link href="<?php echo base_url(); ?>assets/vendor/jquery-dropdown-master/jquery.dropdown.css" rel="stylesheet">
 
+    <!--datetime & time picker-->
+    <link href="<?php echo base_url(); ?>assets/vendor/datetime-picker/css/datetimepicker.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/vendor/timepicker/css/timepicker.css" rel="stylesheet">
+
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script src="assets/vendor/html5shiv.js"></script>
@@ -168,8 +172,32 @@
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-sm-4 col-form-label col-form-label-sm">Tanggal Cuci</label>
+                                    <div class="input-group col-sm-8">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="basic-addon1"><i class="vl_calendar"></i></span>
+                                        </div>
+                                        <!-- <input type="text" class="form-control" placeholder="Tanggal Cuci" name="tanggal_cuci" aria-label="Tanggal Cuci" aria-describedby="basic-addon1" id="tanggal"> -->
+                                        <input type="text" class="form-control" placeholder="Tanggal Cuci" name="tanggal_cuci" id="tanggal">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label col-form-label-sm">Waktu Cuci</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control" placeholder="Tanggal Cuci" name="tanggal_cuci" id="datepicker">
+                                        <select class="form-control" name="waktu">
+                                            <?php for ($i = 1; $i < 24; $i++) {?>
+                                                <option value="<?php echo $i ?>"
+                                                    <?php foreach ($pesanan as $item): ?>
+                                                        <?php if ($item->jam_cuci == $i): ?>
+                                                            <?php echo "disabled" ?>
+                                                        <?php endif?>
+                                                    <?php endforeach?>
+                                                    >
+
+                                                    <?php echo $i ?>:00
+                                                </option>
+                                            <?php }?>
+                                        </select>
+                                        <!-- <input type="text" class="form-control" placeholder="Tanggal Cuci" name="tanggal_cuci" id="waktu"> -->
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -224,6 +252,7 @@
     <script src="<?php echo base_url(); ?>assets/vendor/jquery-ui/jquery-ui.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/vendor/popper.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/vendor/anytime-picker/anytime.5.2.0.js"></script>
     <script src="<?php echo base_url(); ?>assets/vendor/date-picker/js/bootstrap-datepicker.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/vendor/jquery-dropdown-master/jquery.dropdown.js"></script>
     <script src="<?php echo base_url(); ?>assets/vendor/m-custom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
@@ -240,7 +269,14 @@
     <!--jquery stepy-->
     <script src="<?php echo base_url(); ?>assets/vendor/jquery-steps/jquery.stepy.js"></script>
 
-    <!--[if lt IE 9]>
+    <!--datetime picker-->
+    <script src="<?php echo base_url(); ?>assets/vendor/datetime-picker/js/bootstrap-datetimepicker.js"></script>
+    <script src="<?php echo base_url(); ?>assets/vendor/timepicker/js/bootstrap-timepicker.js"></script>
+    <!--init datetime picker-->
+    <script src="<?php echo base_url(); ?>assets/vendor/js-init/pickers/init-datetime-picker.js"></script>
+
+
+    <!--[if lt IE 9]>pickatime/
     <script src="assets/vendor/modernizr.js"></script>
     <![endif]-->
 
@@ -275,9 +311,33 @@
             }
         });
 
-        $('#datepicker').datepicker({
+        $('#tanggal').datepicker({
             // format: "dd MM yyyy",
             format: "yyyy-mm-dd",
+        });
+
+        $('#tanggal').on('change', function() {
+            var tanggal = $('#tanggal').val();
+            $.ajax({
+                url: '<?php echo base_url() ?>Kasir/get_waktu',
+                type: 'post',
+                dataType: 'json',
+                data: {'tanggal': tanggal},
+            })
+            .done(function(res) {
+                $.each(res, function(index, val) {
+                    console.log($('#waktu').val());
+                    $('#waktu option[value=10]').prop("disabled", true);
+
+                });
+            })
+            .fail(function() {
+                console.log("error");
+            })
+            .always(function(res) {
+                // console.log(res);
+            });
+
         });
     </script>
 </body>
