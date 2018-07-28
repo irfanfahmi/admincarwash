@@ -119,11 +119,11 @@
                                         <td><?php echo $value->tanggal_pesan; ?></td>
                                         <td><?php echo $value->tanggal_cuci; ?></td>
                                         <td><?php echo $value->nama_tipe; ?></td>
-                                        <td><?php echo $value->status; ?></td>
+                                        <td><?php echo $value->status_bayar; ?></td>
                                         <td>
-                                            <a href="<?php echo base_url('kasir/setujui_permintaan_pemesanan/') . $value->id_carwash; ?>" class="btn btn-warning"><i class="fa fa-check"></i></a>
-                                            <a href="" class="btn btn-success"><i class="icon-pencil"></i></a>
-                                            <a href="" class="btn btn-danger"><i class="icon-trash"></i></a>
+                                            <a href="<?php echo base_url('kasir/setujui_permintaan_pemesanan/') . $value->id_pemesanan; ?>" class="btn btn-warning"><i class="fa fa-check"></i></a>
+                                            <button class="btn btn-success" onclick="lihat(<?php echo $value->id_pemesanan ?>)"><i class="icon-pencil"></i></button>
+                                            <a href="<?php echo base_url('kasir/batalkan_pemesanan/') . $value->id_pemesanan ?>" class="btn btn-danger"><i class="icon-trash"></i></a>
                                         </td>
                                     </tr>
                                     <?php $no++;endforeach;?>
@@ -131,6 +131,75 @@
                                 </table>
                             </div>
                         </div>
+
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                            Launch demo modal
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="modal_lihat" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Data Pesanan</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="col-12">
+                                            <div class="table-responsive">
+                                                <table class="table table-bordered">
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col">Kode Pesanan</th>
+                                                            <td id="kode">kode pesanan</td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody class="text-muted">
+                                                        <tr>
+                                                            <th scope="col">Nama</th>
+                                                            <td id="nama">nama</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="col">Jenis Mobil</th>
+                                                            <td id="tipe">Tipe mobil</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="col">No. Polisi</th>
+                                                            <td id="nopol">nopol</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="col">Jenis Cuci</th>
+                                                            <td id="jenis">Jenis cuci</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="col">Waktu Cuci</th>
+                                                            <td id="waktu">waktu cuci</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="col">Status Bayar</th>
+                                                            <td id="bayar">status bayar</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="col">Bukti Bayar</th>
+                                                            <td><img src="" alt="" id="bukti"></td>
+                                                        </tr>
+
+                                                    </tbody>
+                                                </table>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                                        <button type="button" class="btn btn-primary" id="lunas">Lunas</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -167,6 +236,50 @@
 
     <!--basic scripts initialization-->
     <script src="<?php echo base_url(); ?>assets/js/scripts.js"></script>
+
+    <script>
+        function lihat(id_pesan) {
+            $.ajax({
+                url: '<?php echo base_url() ?>Kasir/lihat_pemesanan',
+                type: 'post',
+                dataType: 'json',
+                data: {'id_pesan': id_pesan},
+            })
+            .done(function(res) {
+                console.log(res);
+                $('#kode').html(res.id_pemesanan);
+                $('#nama').html(res.nama_pemesan);
+                $('#tipe').html(res.jenis);
+                $('#nopol').html(res.plat_nomor);
+                $('#jenis').html(res.nama_tipe);
+                $('#waktu').html(res.tanggal_cuci + " - " + res.jam_cuci + ":00");
+                $('#bayar').html(res.status_bayar);
+                $('#bukti').attr('src', '<?php echo base_url('uploads/') ?>)' + res.bukti_bayar);
+                $('#modal_lihat').modal('show');
+            })
+            .fail(function() {
+                console.log("error");
+            });
+        }
+
+        $('#lunas').on('click', function() {
+            var kode = $('#kode').html();
+            $.ajax({
+                url: '<?php echo base_url('Kasir/lunas') ?>',
+                type: 'post',
+                dataType: 'json',
+                data: {'kode': kode},
+            })
+            .done(function() {
+                console.log("success");
+                $(location).attr('href','<?php echo base_url() ?>kasir/pesanan');
+            })
+            .fail(function() {
+                console.log("error");
+            });
+            $('#modal_lihat').modal('hide');
+        });
+    </script>
 </body>
 
 </html>
