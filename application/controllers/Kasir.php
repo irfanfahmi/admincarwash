@@ -118,19 +118,68 @@ class Kasir extends CI_Controller {
 	}
 
 	public function setujui_permintaan_pemesanan() {
-		# code...
+		echo "<pre>";
+		$idpesan = $this->uri->segment(3);
+		$data = array('status_pesan' => 1);
+		$where = array('id_pemesanan' => $idpesan);
+		$update = $this->Models->update($where, $data, 'pemesanan');
+		if ($update) {
+			$this->session->set_flashdata('msg', '<div class="alert alert-success" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong class="d-block d-sm-inline-block-force">Berhasil!</strong> Data Berhasil Tersimpan.</div>');
+		} else {
+			$this->session->set_flashdata('msg', '<div class="alert alert-danger" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong class="d-block d-sm-inline-block-force">Gagal!</strong> Data Tidak Tersimpan.</div>');
+		}
+
+		$pemesanan = $this->Models->fetch($where, 'pemesanan')->row();
+
+		// print_r($pemesanan);
+
+		$transaksi = array(
+			'id_pemesanan' => $idpesan,
+			'id_carwash' => $this->session->userdata('logged_in')['carwash'],
+			'nama_pelanggan' => $pemesanan->nama_pemesan,
+			'nopol' => $pemesanan->plat_nomor,
+			'jenis_cuci' => $pemesanan->id_tipe,
+			'merk_mobil' => $pemesanan->jenis,
+			'tanggal' => $pemesanan->tanggal_cuci,
+			'biaya' => $pemesanan->total_biaya,
+		);
+
+		$this->Models->insert($transaksi, 'transaksi');
+
+		redirect('Kasir/pesanan', 'refresh');
 	}
 
-	public function lihat_detail_pemesanan() {
-		# code...
+	public function lihat_pemesanan() {
+		$id = $this->input->post('id_pesan');
+		$pesanan = $this->Models->get_pemesanan_by_id($id)->row();
+		echo json_encode($pesanan);
 	}
 
-	public function cetak_kode_pemesanan() {
-		# code...
+	public function lunas() {
+		$id = $this->input->post('kode');
+		$pesanan = $this->Models->get_pemesanan_by_id($id)->row();
+		$data = array('uang_bayar' => $pesanan->total_biaya, 'status_bayar' => 'lunas');
+		$where = array('id_pemesanan' => $id);
+		$update = $this->Models->update($where, $data, 'pemesanan');
+		echo json_encode($update);
+	}
+
+	public function cetak() {
+		$id = $this->uri->segment(3);
+		$data = $this->Models->get_transaksi_by_id($id)->row();
+		$this->load->view('kasir/invoices', $data);
 	}
 
 	public function batalkan_pemesanan() {
-		# code...
+		$idpesan = $this->uri->segment(3);
+		$data = array('status_pesan' => 2);
+		$where = array('id_pemesanan' => $idpesan);
+		$update = $this->Models->update($where, $data, 'pemesanan');
+		if ($update) {
+			$this->session->set_flashdata('msg', '<div class="alert alert-success" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong class="d-block d-sm-inline-block-force">Berhasil!</strong> Data Berhasil Tersimpan.</div>');
+		} else {
+			$this->session->set_flashdata('msg', '<div class="alert alert-danger" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong class="d-block d-sm-inline-block-force">Gagal!</strong> Data Tidak Tersimpan.</div>');
+		}
 	}
 
 	public function input_transaksi() {

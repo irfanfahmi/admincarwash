@@ -128,7 +128,7 @@
                                             <?php endif?>
                                         </td>  -->
                                         <td><?php echo $value->biaya; ?></td>
-                                        <td><a href="" class="btn btn-success" >Cetak<i class="icon-pencil"></i></a></td>
+                                        <td><a href="<?php echo base_url('Kasir/cetak/') . $value->id_transaksi ?>" class="btn btn-success" >Cetak<i class="icon-pencil"></i></a></td>
 
                                         <!-- <td>
                                             <?php if ($value->status == 'Aktif') {?>
