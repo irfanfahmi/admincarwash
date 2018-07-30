@@ -72,7 +72,7 @@ class Kasir extends CI_Controller {
 			'tanggal_cuci' => $tanggal,
 			'jam_cuci' => $jam_cuci,
 			'total_biaya' => $this->input->post('biaya'),
-			'status' => $this->input->post('status'),
+			'status_pesan' => $this->input->post('status'),
 			'uang_bayar' => $this->input->post('uang'),
 			'note' => $this->input->post('note'),
 		);

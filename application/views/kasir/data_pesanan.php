@@ -95,6 +95,7 @@
                                         <th>Pelanggan</th>
                                         <th>Tanggal Pesan</th>
                                         <th>Tanggal Cuci</th>
+                                        <th>Jam Cuci</th>
                                         <th>Jenis</th>
                                         <th>Status</th>
                                         <!-- <th>Note</th> -->
@@ -118,6 +119,7 @@
                                         <td><?php echo $value->nama_pemesan; ?></td>
                                         <td><?php echo $value->tanggal_pesan; ?></td>
                                         <td><?php echo $value->tanggal_cuci; ?></td>
+                                        <td><?php echo $value->jam_cuci ?>:00</td>
                                         <td><?php echo $value->nama_tipe; ?></td>
                                         <td><?php echo $value->status_bayar; ?></td>
                                         <td>
@@ -131,10 +133,6 @@
                                 </table>
                             </div>
                         </div>
-
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                            Launch demo modal
-                        </button>
 
                         <!-- Modal -->
                         <div class="modal fade" id="modal_lihat" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

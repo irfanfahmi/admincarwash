@@ -184,7 +184,7 @@
                                     <label class="col-sm-4 col-form-label col-form-label-sm">Waktu Cuci</label>
                                     <div class="col-sm-8">
                                         <select class="form-control" name="waktu">
-                                            <?php for ($i = 1; $i < 24; $i++) {?>
+                                            <?php for ($i = 10; $i < 22; $i++) {?>
                                                 <option value="<?php echo $i ?>"
                                                     <?php foreach ($pesanan as $item): ?>
                                                         <?php if ($item->jam_cuci == $i): ?>
