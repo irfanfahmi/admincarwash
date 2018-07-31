@@ -194,101 +194,567 @@
 <!--  gallery -->
  
 <!--  end team -->
-<!--  facts -->
-  <div id="facts" class="facts-main-block">
-    <div class="parallax" style="background-image: url('images/bg/facts-bg.jpg')">
-    <div class="overlay-bg"></div>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-3 col-sm-6">
-            <div class="facts-block text-center">
-              <div class="facts-icon">
-                <i class="fa fa-truck" aria-hidden="true"></i>
+<!--  plans -->
+  <div id="pricing-plan-two" class="pricing-plan-main-block pricing-plan-two-main-block">
+    <div class="container">
+      <div class="section text-center">
+        <h3 class="section-heading">Washing Plans</h3>
+        <p class="sub-heading">Phasellus ullamcorper ipsum rutrum nunc nunc nonummy metus vestibulum</p>
+      </div>
+      <div class="pricing-plan-tab">
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="#plan-1" aria-controls="plan-1" role="tab" data-toggle="tab"><span><i class="icon-1"></i></span>Regular Car</a></li>
+          <li role="presentation"><a href="#plan-2" aria-controls="plan-2" role="tab" data-toggle="tab"><span><i class="icon-3"></i></span>Medium Car</a></li>
+          <li role="presentation"><a href="#plan-3" aria-controls="plan-3" role="tab" data-toggle="tab"><span><i class="icon-2"></i></span>Compact SUV</a></li>
+          <li role="presentation"><a href="#plan-4" aria-controls="plan-4" role="tab" data-toggle="tab"><span><i class="icon-4"></i></span>Mini Van</a></li>
+          <li role="presentation"><a href="#plan-5" aria-controls="plan-5" role="tab" data-toggle="tab"><span><i class="icon-6"></i></span>Pickup Truck</a></li>
+          <li role="presentation"><a href="#plan-6" aria-controls="plan-6" role="tab" data-toggle="tab"><span><i class="icon-8"></i></span>Cargo Truck</a></li>
+        </ul>
+      </div>
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="plan-1">
+          <div class="row">
+            <div class="col-md-3 col-sm-6">
+              <div class="pricing-block text-center">
+                <h6 class="pricing-heding">Basic Washing</h6>
+                <div class="pricing-price-block">
+                  <h2 class="pricing-price">$49.00</h2>
+                  <div class="pricing-duration">25 Mins</div>
+                </div>
+                <div class="pricing-dtl">
+                  <ul>
+                    <li>Exterior Hand Wash</li>
+                    <li>Towel Hand Dry</li>
+                    <li>Wheel Shine</li>
+                  </ul>
+                  <a href="#" class="btn btn-orange">Book Now</a>
+                </div>
               </div>
-              <h2 class="facts-number counter">1025</h2>
-              <div class="facts-text">Vehicle Washed</div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="pricing-block text-center">
+                <h6 class="pricing-heding">Deluxe Washing</h6>
+                <div class="pricing-price-block">
+                  <h2 class="pricing-price">$69.00</h2>
+                  <div class="pricing-duration">45 Mins</div>
+                </div>
+                <div class="pricing-dtl">
+                  <ul>
+                    <li>Exterior Hand Wash</li>
+                    <li>Towel Hand Dry</li>
+                    <li>Wheel Shine</li>
+                    <li>Tire Dressing</li>
+                    <li>Window In &amp; Out</li>
+                    <li>Sealer Hand Wax</li>
+                  </ul>
+                  <a href="#" class="btn btn-orange">Book Now</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="pricing-block text-center">
+                <h6 class="pricing-heding">Ultimate Washing</h6>
+                <div class="pricing-price-block">
+                  <h2 class="pricing-price">$89.00</h2>
+                  <div class="pricing-duration">60 Mins</div>
+                </div>
+                <div class="pricing-dtl">
+                  <ul>
+                    <li>Exterior Hand Wash</li>
+                    <li>Towel Hand Dry</li>
+                    <li>Wheel Shine</li>
+                    <li>Tire Dressing</li>
+                    <li>Window In &amp; Out</li>
+                    <li>Sealer Hand Wax</li>
+                    <li>Interior Vacuum</li>
+                    <li>Door Shut’s &amp; Plastics</li>
+                    <li>Dashboard Clean</li>
+                  </ul>
+                  <a href="#" class="btn btn-orange">Book Now</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="pricing-block text-center">
+                <h6 class="pricing-heding">Super Washing</h6>
+                <div class="pricing-price-block">
+                  <h2 class="pricing-price">$109.00</h2>
+                  <div class="pricing-duration">100 Mins</div>
+                </div>
+                <div class="pricing-dtl">
+                  <ul>
+                    <li>Exterior Hand Wash</li>
+                    <li>Towel Hand Dry</li>
+                    <li>Wheel Shine</li>
+                    <li>Tire Dressing</li>
+                    <li>Window In &amp; Out</li>
+                    <li>Sealer Hand Wax</li>
+                    <li>Interior Vacuum</li>
+                    <li>Door Shut’s &amp; Plastics</li>
+                    <li>Dashboard Clean</li>
+                    <li>Air Freshener</li>
+                    <li>Triple Coat Hand Wax</li>
+                  </ul>
+                  <a href="#" class="btn btn-orange">Book Now</a>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="col-md-3 col-sm-6">
-            <div class="facts-block text-center">
-              <div class="facts-icon">
-                <i class="fa fa-car" aria-hidden="true"></i>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="plan-2">
+          <div class="row">
+            <div class="col-md-3 col-sm-6">
+              <div class="pricing-block text-center">
+                <h6 class="pricing-heding">Basic Washing</h6>
+                <div class="pricing-price-block">
+                  <h2 class="pricing-price">$69.00</h2>
+                  <div class="pricing-duration">25 Mins</div>
+                </div>
+                <div class="pricing-dtl">
+                  <ul>
+                    <li>Exterior Hand Wash</li>
+                    <li>Towel Hand Dry</li>
+                    <li>Wheel Shine</li>
+                  </ul>
+                  <a href="#" class="btn btn-orange">Book Now</a>
+                </div>
               </div>
-              <h2 class="facts-number counter">850</h2>
-              <div class="facts-text">Car Washed</div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="pricing-block text-center">
+                <h6 class="pricing-heding">Deluxe Washing</h6>
+                <div class="pricing-price-block">
+                  <h2 class="pricing-price">$89.00</h2>
+                  <div class="pricing-duration">45 Mins</div>
+                </div>
+                <div class="pricing-dtl">
+                  <ul>
+                    <li>Exterior Hand Wash</li>
+                    <li>Towel Hand Dry</li>
+                    <li>Wheel Shine</li>
+                    <li>Tire Dressing</li>
+                    <li>Window In &amp; Out</li>
+                    <li>Sealer Hand Wax</li>
+                  </ul>
+                  <a href="#" class="btn btn-orange">Book Now</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="pricing-block text-center">
+                <h6 class="pricing-heding">Ultimate Washing</h6>
+                <div class="pricing-price-block">
+                  <h2 class="pricing-price">$109.00</h2>
+                  <div class="pricing-duration">60 Mins</div>
+                </div>
+                <div class="pricing-dtl">
+                  <ul>
+                    <li>Exterior Hand Wash</li>
+                    <li>Towel Hand Dry</li>
+                    <li>Wheel Shine</li>
+                    <li>Tire Dressing</li>
+                    <li>Window In &amp; Out</li>
+                    <li>Sealer Hand Wax</li>
+                    <li>Interior Vacuum</li>
+                    <li>Door Shut’s &amp; Plastics</li>
+                    <li>Dashboard Clean</li>
+                  </ul>
+                  <a href="#" class="btn btn-orange">Book Now</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="pricing-block text-center">
+                <h6 class="pricing-heding">Super Washing</h6>
+                <div class="pricing-price-block">
+                  <h2 class="pricing-price">$309.00</h2>
+                  <div class="pricing-duration">100 Mins</div>
+                </div>
+                <div class="pricing-dtl">
+                  <ul>
+                    <li>Exterior Hand Wash</li>
+                    <li>Towel Hand Dry</li>
+                    <li>Wheel Shine</li>
+                    <li>Tire Dressing</li>
+                    <li>Window In &amp; Out</li>
+                    <li>Sealer Hand Wax</li>
+                    <li>Interior Vacuum</li>
+                    <li>Door Shut’s &amp; Plastics</li>
+                    <li>Dashboard Clean</li>
+                    <li>Air Freshener</li>
+                    <li>Triple Coat Hand Wax</li>
+                  </ul>
+                  <a href="#" class="btn btn-orange">Book Now</a>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="col-md-3 col-sm-6">
-            <div class="facts-block text-center">
-              <div class="facts-icon">
-                <i class="fa fa-smile-o" aria-hidden="true"></i>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="plan-3">
+          <div class="row">
+            <div class="col-md-3 col-sm-6">
+              <div class="pricing-block text-center">
+                <h6 class="pricing-heding">Basic Washing</h6>
+                <div class="pricing-price-block">
+                  <h2 class="pricing-price">$89.00</h2>
+                  <div class="pricing-duration">25 Mins</div>
+                </div>
+                <div class="pricing-dtl">
+                  <ul>
+                    <li>Exterior Hand Wash</li>
+                    <li>Towel Hand Dry</li>
+                    <li>Wheel Shine</li>
+                  </ul>
+                  <a href="#" class="btn btn-orange">Book Now</a>
+                </div>
               </div>
-              <h2 class="facts-number counter">780</h2>
-              <div class="facts-text">Happy Customers</div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="pricing-block text-center">
+                <h6 class="pricing-heding">Deluxe Washing</h6>
+                <div class="pricing-price-block">
+                  <h2 class="pricing-price">$109.00</h2>
+                  <div class="pricing-duration">45 Mins</div>
+                </div>
+                <div class="pricing-dtl">
+                  <ul>
+                    <li>Exterior Hand Wash</li>
+                    <li>Towel Hand Dry</li>
+                    <li>Wheel Shine</li>
+                    <li>Tire Dressing</li>
+                    <li>Window In &amp; Out</li>
+                    <li>Sealer Hand Wax</li>
+                  </ul>
+                  <a href="#" class="btn btn-orange">Book Now</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="pricing-block text-center">
+                <h6 class="pricing-heding">Ultimate Washing</h6>
+                <div class="pricing-price-block">
+                  <h2 class="pricing-price">$149.00</h2>
+                  <div class="pricing-duration">60 Mins</div>
+                </div>
+                <div class="pricing-dtl">
+                  <ul>
+                    <li>Exterior Hand Wash</li>
+                    <li>Towel Hand Dry</li>
+                    <li>Wheel Shine</li>
+                    <li>Tire Dressing</li>
+                    <li>Window In &amp; Out</li>
+                    <li>Sealer Hand Wax</li>
+                    <li>Interior Vacuum</li>
+                    <li>Door Shut’s &amp; Plastics</li>
+                    <li>Dashboard Clean</li>
+                  </ul>
+                  <a href="#" class="btn btn-default">Book Now</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="pricing-block text-center">
+                <h6 class="pricing-heding">Super Washing</h6>
+                <div class="pricing-price-block">
+                  <h2 class="pricing-price">$199.00</h2>
+                  <div class="pricing-duration">100 Mins</div>
+                </div>
+                <div class="pricing-dtl">
+                  <ul>
+                    <li>Exterior Hand Wash</li>
+                    <li>Towel Hand Dry</li>
+                    <li>Wheel Shine</li>
+                    <li>Tire Dressing</li>
+                    <li>Window In &amp; Out</li>
+                    <li>Sealer Hand Wax</li>
+                    <li>Interior Vacuum</li>
+                    <li>Door Shut’s &amp; Plastics</li>
+                    <li>Dashboard Clean</li>
+                    <li>Air Freshener</li>
+                    <li>Triple Coat Hand Wax</li>
+                  </ul>
+                  <a href="#" class="btn btn-orange">Book Now</a>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="col-md-3 col-sm-6">
-            <div class="facts-block text-center">
-              <div class="facts-icon">
-                <i class="fa fa-coffee" aria-hidden="true"></i>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="plan-4">
+          <div class="row">
+            <div class="col-md-3 col-sm-6">
+              <div class="pricing-block text-center">
+                <h6 class="pricing-heding">Basic Washing</h6>
+                <div class="pricing-price-block">
+                  <h2 class="pricing-price">$99.00</h2>
+                  <div class="pricing-duration">25 Mins</div>
+                </div>
+                <div class="pricing-dtl">
+                  <ul>
+                    <li>Exterior Hand Wash</li>
+                    <li>Towel Hand Dry</li>
+                    <li>Wheel Shine</li>
+                  </ul>
+                  <a href="#" class="btn btn-orange">Book Now</a>
+                </div>
               </div>
-              <h2 class="facts-number counter">500</h2>
-              <div class="facts-text">Cup of Coffee</div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="pricing-block text-center">
+                <h6 class="pricing-heding">Deluxe Washing</h6>
+                <div class="pricing-price-block">
+                  <h2 class="pricing-price">$149.00</h2>
+                  <div class="pricing-duration">45 Mins</div>
+                </div>
+                <div class="pricing-dtl">
+                  <ul>
+                    <li>Exterior Hand Wash</li>
+                    <li>Towel Hand Dry</li>
+                    <li>Wheel Shine</li>
+                    <li>Tire Dressing</li>
+                    <li>Window In &amp; Out</li>
+                    <li>Sealer Hand Wax</li>
+                  </ul>
+                  <a href="#" class="btn btn-default">Book Now</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="pricing-block text-center">
+                <h6 class="pricing-heding">Ultimate Washing</h6>
+                <div class="pricing-price-block">
+                  <h2 class="pricing-price">$199.00</h2>
+                  <div class="pricing-duration">60 Mins</div>
+                </div>
+                <div class="pricing-dtl">
+                  <ul>
+                    <li>Exterior Hand Wash</li>
+                    <li>Towel Hand Dry</li>
+                    <li>Wheel Shine</li>
+                    <li>Tire Dressing</li>
+                    <li>Window In &amp; Out</li>
+                    <li>Sealer Hand Wax</li>
+                    <li>Interior Vacuum</li>
+                    <li>Door Shut’s &amp; Plastics</li>
+                    <li>Dashboard Clean</li>
+                  </ul>
+                  <a href="#" class="btn btn-default">Book Now</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="pricing-block text-center">
+                <h6 class="pricing-heding">Super Washing</h6>
+                <div class="pricing-price-block">
+                  <h2 class="pricing-price">$249.00</h2>
+                  <div class="pricing-duration">100 Mins</div>
+                </div>
+                <div class="pricing-dtl">
+                  <ul>
+                    <li>Exterior Hand Wash</li>
+                    <li>Towel Hand Dry</li>
+                    <li>Wheel Shine</li>
+                    <li>Tire Dressing</li>
+                    <li>Window In &amp; Out</li>
+                    <li>Sealer Hand Wax</li>
+                    <li>Interior Vacuum</li>
+                    <li>Door Shut’s &amp; Plastics</li>
+                    <li>Dashboard Clean</li>
+                    <li>Air Freshener</li>
+                    <li>Triple Coat Hand Wax</li>
+                  </ul>
+                  <a href="#" class="btn btn-orange">Book Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="plan-5">
+          <div class="row">
+            <div class="col-md-3 col-sm-6">
+              <div class="pricing-block text-center">
+                <h6 class="pricing-heding">Basic Washing</h6>
+                <div class="pricing-price-block">
+                  <h2 class="pricing-price">$99.00</h2>
+                  <div class="pricing-duration">25 Mins</div>
+                </div>
+                <div class="pricing-dtl">
+                  <ul>
+                    <li>Exterior Hand Wash</li>
+                    <li>Towel Hand Dry</li>
+                    <li>Wheel Shine</li>
+                  </ul>
+                  <a href="#" class="btn btn-orange">Book Now</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="pricing-block text-center">
+                <h6 class="pricing-heding">Deluxe Washing</h6>
+                <div class="pricing-price-block">
+                  <h2 class="pricing-price">$109.00</h2>
+                  <div class="pricing-duration">45 Mins</div>
+                </div>
+                <div class="pricing-dtl">
+                  <ul>
+                    <li>Exterior Hand Wash</li>
+                    <li>Towel Hand Dry</li>
+                    <li>Wheel Shine</li>
+                    <li>Tire Dressing</li>
+                    <li>Window In &amp; Out</li>
+                    <li>Sealer Hand Wax</li>
+                  </ul>
+                  <a href="#" class="btn btn-orange">Book Now</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="pricing-block text-center">
+                <h6 class="pricing-heding">Ultimate Washing</h6>
+                <div class="pricing-price-block">
+                  <h2 class="pricing-price">$145.00</h2>
+                  <div class="pricing-duration">60 Mins</div>
+                </div>
+                <div class="pricing-dtl">
+                  <ul>
+                    <li>Exterior Hand Wash</li>
+                    <li>Towel Hand Dry</li>
+                    <li>Wheel Shine</li>
+                    <li>Tire Dressing</li>
+                    <li>Window In &amp; Out</li>
+                    <li>Sealer Hand Wax</li>
+                    <li>Interior Vacuum</li>
+                    <li>Door Shut’s &amp; Plastics</li>
+                    <li>Dashboard Clean</li>
+                  </ul>
+                  <a href="#" class="btn btn-orange">Book Now</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="pricing-block text-center">
+                <h6 class="pricing-heding">Super Washing</h6>
+                <div class="pricing-price-block">
+                  <h2 class="pricing-price">$249.00</h2>
+                  <div class="pricing-duration">100 Mins</div>
+                </div>
+                <div class="pricing-dtl">
+                  <ul>
+                    <li>Exterior Hand Wash</li>
+                    <li>Towel Hand Dry</li>
+                    <li>Wheel Shine</li>
+                    <li>Tire Dressing</li>
+                    <li>Window In &amp; Out</li>
+                    <li>Sealer Hand Wax</li>
+                    <li>Interior Vacuum</li>
+                    <li>Door Shut’s &amp; Plastics</li>
+                    <li>Dashboard Clean</li>
+                    <li>Air Freshener</li>
+                    <li>Triple Coat Hand Wax</li>
+                  </ul>
+                  <a href="#" class="btn btn-orange">Book Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="plan-6">
+          <div class="row">
+            <div class="col-md-3 col-sm-6">
+              <div class="pricing-block text-center">
+                <h6 class="pricing-heding">Basic Washing</h6>
+                <div class="pricing-price-block">
+                  <h2 class="pricing-price">$149.00</h2>
+                  <div class="pricing-duration">25 Mins</div>
+                </div>
+                <div class="pricing-dtl">
+                  <ul>
+                    <li>Exterior Hand Wash</li>
+                    <li>Towel Hand Dry</li>
+                    <li>Wheel Shine</li>
+                  </ul>
+                  <a href="#" class="btn btn-orange">Book Now</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="pricing-block text-center">
+                <h6 class="pricing-heding">Deluxe Washing</h6>
+                <div class="pricing-price-block">
+                  <h2 class="pricing-price">$199.00</h2>
+                  <div class="pricing-duration">45 Mins</div>
+                </div>
+                <div class="pricing-dtl">
+                  <ul>
+                    <li>Exterior Hand Wash</li>
+                    <li>Towel Hand Dry</li>
+                    <li>Wheel Shine</li>
+                    <li>Tire Dressing</li>
+                    <li>Window In &amp; Out</li>
+                    <li>Sealer Hand Wax</li>
+                  </ul>
+                  <a href="#" class="btn btn-default">Book Now</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="pricing-block text-center">
+                <h6 class="pricing-heding">Ultimate Washing</h6>
+                <div class="pricing-price-block">
+                  <h2 class="pricing-price">$249.00</h2>
+                  <div class="pricing-duration">60 Mins</div>
+                </div>
+                <div class="pricing-dtl">
+                  <ul>
+                    <li>Exterior Hand Wash</li>
+                    <li>Towel Hand Dry</li>
+                    <li>Wheel Shine</li>
+                    <li>Tire Dressing</li>
+                    <li>Window In &amp; Out</li>
+                    <li>Sealer Hand Wax</li>
+                    <li>Interior Vacuum</li>
+                    <li>Door Shut’s &amp; Plastics</li>
+                    <li>Dashboard Clean</li>
+                  </ul>
+                  <a href="#" class="btn btn-orange">Book Now</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="pricing-block text-center">
+                <h6 class="pricing-heding">Super Washing</h6>
+                <div class="pricing-price-block">
+                  <h2 class="pricing-price">$299.00</h2>
+                  <div class="pricing-duration">100 Mins</div>
+                </div>
+                <div class="pricing-dtl">
+                  <ul>
+                    <li>Exterior Hand Wash</li>
+                    <li>Towel Hand Dry</li>
+                    <li>Wheel Shine</li>
+                    <li>Tire Dressing</li>
+                    <li>Window In &amp; Out</li>
+                    <li>Sealer Hand Wax</li>
+                    <li>Interior Vacuum</li>
+                    <li>Door Shut’s &amp; Plastics</li>
+                    <li>Dashboard Clean</li>
+                    <li>Air Freshener</li>
+                    <li>Triple Coat Hand Wax</li>
+                  </ul>
+                  <a href="#" class="btn btn-orange">Book Now</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-<!--  end facts -->
+<!--  end plans -->
 <!--  plans -->
  
 <!--  end plans -->
-<!--  testimonials -->
 
-<!--  end testimonials -->
-<!--  appointment -->
-<!--  end appointment -->
-<!--  latest news -->
-  <div id="news" class="news-main-block">
-    <div class="container">
-      <div class="section text-center">
-        <h3 class="section-heading">Hot Carwash</h3>
-        <p class="sub-heading">Phasellus ullamcorper ipsum rutrum nunc nunc nonummy metus vestibulum</p>
-      </div>
-      <div class="row">
-      <!--   <?php foreach($topcarwash as $value): ?> -->
-        <div class="col-md-4 col-sm-6">
-          <div class="news-block">
-            <div class="news-img">
-              <a href="blog-single-left-sidebar.html"><!-- <img src="http://localhost/admincarwash/fotocarwash/<?php echo $value->foto; ?>" class="img-responsive" alt="news-01"> -->
-                <div class="overlay-bg"></div>
-              </a>
-            </div>
-            <div class="news-top">
-              <div class="news-date text-center">
-                <h4 class="news-day">21</h4>
-                <div class="news-month">CUSTOMER</div>
-              </div>
-              <div class="news-heading-block">
-                <a href="blog-single-left-sidebar.html"><h6 class="news-heading"><!-- <?php echo $value->nama; ?> --></h6></a>
-                <ul class="news-tag">
-                  <li><i class="fa fa-map-marker" aria-hidden="true"></i> <a href="#"><!-- <?php echo $value->alamat; ?> --></a></li>
-                  <li><i class="fa fa-phone" aria-hidden="true"></i> <a href="#"><!-- <?php echo $value->kontak; ?> --></a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="news-dtl">
-              <p><!-- <?php echo substr($value->deskripsi, 0,150); ?> --></p>
-              <a href="<!-- <?php echo site_url('carwash/detail/').$value->id_carwash; ?> -->" class="btn btn-default pull-right">Read More >></a>
-            </div>
-          </div>
-        </div>
-      <?php endforeach; ?>
-      </div>
-    </div>
-  </div>
-<!--  end latest news -->
 <!--  map -->
 <!--  end map -->
 <!--  footer -->

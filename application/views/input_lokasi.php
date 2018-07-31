@@ -56,7 +56,8 @@ google.maps.event.addDomListener(window, 'load', initialize);
 <body>
 
   <div id="googleMap" style="width:100%;height:380px;"></div>
-  
+  <!--  locations -->  
+
   <form action="" method="post">
     <input type="text" id="lat" name="lat" value="">
     <input type="text" id="lng" name="lng" value="">
