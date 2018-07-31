@@ -72,6 +72,9 @@ class Akun extends CI_Controller {
 			'nama_pemilik' => $this->input->post('nama_pemilik'),
 			'alamat' => $this->input->post('alamat_carwash'),
 			'deskripsi' => $this->input->post('deskripsi'),
+			'no_rekening' => $this->input->post('no_rekening'),
+			'nama_rekening' => $this->input->post('nama_rekening'),
+			'nama_bank' => $this->input->post('nama_bank'),
 			'status' => 'Aktif',
 		);
 
@@ -101,7 +104,6 @@ class Akun extends CI_Controller {
 
 		$result = $this->Models->insert($data_kasir, 'akun');
 
-		// $result = $this->Models->insert($data, 'akun');
 		if ($result) {
 			$this->session->set_flashdata('msg', '<div class="alert alert-success" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong class="d-block d-sm-inline-block-force">Berhasil!</strong> Data Berhasil Tersimpan.</div>');
 		} else {

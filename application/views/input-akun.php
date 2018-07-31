@@ -142,6 +142,26 @@ if ($this->session->userdata['logged_in']['jenis'] == 'Administrator') {
                                         </div>
                                     </div>
 
+                                    <h5 class="mb-3">Informasi Rekening</h5>
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label col-form-label-sm">Nama Bank</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" placeholder="Nama Bank" name="nama_bank">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label col-form-label-sm">Nama Rekening</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" placeholder="Nama Rekening" name="nama_rekening">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label col-form-label-sm">No Rekening</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" placeholder="No Rekening" name="no_rekening">
+                                        </div>
+                                    </div>
+
                                 </fieldset>
 
                                 <fieldset title="Step2" class="step" id="default-step-0">

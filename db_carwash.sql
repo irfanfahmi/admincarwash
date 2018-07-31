@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 28, 2018 at 06:49 PM
+-- Generation Time: Jul 30, 2018 at 07:19 PM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 5.6.24
 
@@ -67,6 +67,9 @@ CREATE TABLE `carwash` (
   `kuota` int(11) NOT NULL,
   `deskripsi` text NOT NULL,
   `logo_carwash` text NOT NULL,
+  `no_rekening` varchar(50) NOT NULL,
+  `nama_rekening` varchar(50) NOT NULL,
+  `nama_bank` varchar(20) NOT NULL,
   `status` varchar(50) NOT NULL DEFAULT 'Aktif'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -74,14 +77,14 @@ CREATE TABLE `carwash` (
 -- Dumping data for table `carwash`
 --
 
-INSERT INTO `carwash` (`id_carwash`, `no_izin`, `nama`, `kontak`, `email`, `nama_pemilik`, `alamat`, `kuota`, `deskripsi`, `logo_carwash`, `status`) VALUES
-(1, 0, 'Cuci Mobil Oren', 2147483647, '', '', 'Bekasi', 0, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam arcu, rutrum vel tincidunt non, blandit sit amet mi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam erat volutpat. Duis eget felis hendrerit erat gravida euismod. Sed lobortis pellentesque dui, nec efficitur lorem scelerisque vitae. Quisque vulputate nibh at aliquam semper. Integer cursus turpis eu augue consequat consequat. Pellentesque pharetra laoreet eros, a efficitur nibh pharetra et. Nulla ultricies lacus libero, auctor scelerisque mi convallis nec. Proin nibh odio, posuere in pretium blandit, venenatis quis lectus. Aliquam at urna a odio dictum luctus et imperdiet nibh. Vivamus condimentum sem nisi, quis molestie enim fringilla eu. Aenean a feugiat erat. Proin ornare odio ante. Nunc eget ex nec quam consequat facilisis non tincidunt risus. Mauris vulputate velit dolor, quis efficitur magna lobortis vel.\r\n\r\nMorbi ut tellus facilisis, gravida neque ac, varius magna. Morbi at sagittis augue. Donec eu dolor vitae neque congue lacinia a id enim. Suspendisse arcu mi, gravida ut nulla sit amet, rhoncus rhoncus sem. Pellentesque blandit porta odio quis finibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse faucibus est id vulputate mollis. In nibh diam, maximus nec pulvinar id, pretium in diam. Ut a rhoncus odio. Donec dictum molestie mattis. Suspendisse in felis a justo scelerisque vulputate vel bibendum mi. Morbi posuere luctus accumsan. Cras eu mattis augue, eget venenatis urna. Cras rutrum imperdiet sodales. Quisque at libero placerat, dapibus mauris luctus, posuere velit.\r\n\r\nSed condimentum consequat enim, euismod sodales arcu volutpat rhoncus. Proin ex purus, dictum pharetra pulvinar ac, tincidunt non metus. Proin placerat dui vitae metus molestie, a euismod arcu tincidunt. Donec ut quam lorem. Nam sed mi hendrerit, consectetur odio vel, scelerisque felis. Morbi fermentum velit velit. In non tempor massa, quis vulputate lacus. Nam cursus bibendum ultricies. Cras ut dignissim orci, quis vestibulum libero. Donec eu magna maximus, consectetur risus in, tincidunt lectus. Aenean tempus nisi ut arcu tincidunt, eu consectetur est luctus. Integer euismod erat nunc, consectetur rhoncus lorem efficitur ut. Nam odio tellus, molestie et ipsum non, interdum congue orci.', 'background_login_2.png', 'Aktif'),
-(2, 0, 'Cuci Mobil Kuning', 2147483647, '', '', 'Bandung', 20, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam arcu, rutrum vel tincidunt non, blandit sit amet mi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam erat volutpat. Duis eget felis hendrerit erat gravida euismod. Sed lobortis pellentesque dui, nec efficitur lorem scelerisque vitae. Quisque vulputate nibh at aliquam semper. Integer cursus turpis eu augue consequat consequat. Pellentesque pharetra laoreet eros, a efficitur nibh pharetra et. Nulla ultricies lacus libero, auctor scelerisque mi convallis nec. Proin nibh odio, posuere in pretium blandit, venenatis quis lectus. Aliquam at urna a odio dictum luctus et imperdiet nibh. Vivamus condimentum sem nisi, quis molestie enim fringilla eu. Aenean a feugiat erat. Proin ornare odio ante. Nunc eget ex nec quam consequat facilisis non tincidunt risus. Mauris vulputate velit dolor, quis efficitur magna lobortis vel.\r\n\r\nMorbi ut tellus facilisis, gravida neque ac, varius magna. Morbi at sagittis augue. Donec eu dolor vitae neque congue lacinia a id enim. Suspendisse arcu mi, gravida ut nulla sit amet, rhoncus rhoncus sem. Pellentesque blandit porta odio quis finibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse faucibus est id vulputate mollis. In nibh diam, maximus nec pulvinar id, pretium in diam. Ut a rhoncus odio. Donec dictum molestie mattis. Suspendisse in felis a justo scelerisque vulputate vel bibendum mi. Morbi posuere luctus accumsan. Cras eu mattis augue, eget venenatis urna. Cras rutrum imperdiet sodales. Quisque at libero placerat, dapibus mauris luctus, posuere velit.\r\n\r\nSed condimentum consequat enim, euismod sodales arcu volutpat rhoncus. Proin ex purus, dictum pharetra pulvinar ac, tincidunt non metus. Proin placerat dui vitae metus molestie, a euismod arcu tincidunt. Donec ut quam lorem. Nam sed mi hendrerit, consectetur odio vel, scelerisque felis. Morbi fermentum velit velit. In non tempor massa, quis vulputate lacus. Nam cursus bibendum ultricies. Cras ut dignissim orci, quis vestibulum libero. Donec eu magna maximus, consectetur risus in, tincidunt lectus. Aenean tempus nisi ut arcu tincidunt, eu consectetur est luctus. Integer euismod erat nunc, consectetur rhoncus lorem efficitur ut. Nam odio tellus, molestie et ipsum non, interdum congue orci.', 'background_login_1.png', 'Aktif'),
-(3, 18203818, 'fadhil', 1414, 'fadhilkesuma65@gmail.com', 'fadhil awawa', 'bandung', 0, 'saaaasdsad', '5.png', 'Aktif'),
-(4, 0, 'asd', 0, 'asd', 'asd', 'asd', 0, 'asd', '5.png', 'Aktif'),
-(5, 0, 'zxc', 0, 'xzc', 'zxc', 'zxc', 0, 'zxc', '1.jpg', 'Aktif'),
-(6, 123, 'carwash', 123, 'pemilik', 'ppemilik', 'car', 0, 'car', '', 'Aktif'),
-(7, 77777777, 'Bersih bersinar', 865432176, 'bojongsoang@gmail.com', 'bojongsoang', 'bojongsoang', 0, 'bersih bersinar sunlight', '', 'Aktif');
+INSERT INTO `carwash` (`id_carwash`, `no_izin`, `nama`, `kontak`, `email`, `nama_pemilik`, `alamat`, `kuota`, `deskripsi`, `logo_carwash`, `no_rekening`, `nama_rekening`, `nama_bank`, `status`) VALUES
+(1, 0, 'Cuci Mobil Oren', 2147483647, '', '', 'Bekasi', 0, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam arcu, rutrum vel tincidunt non, blandit sit amet mi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam erat volutpat. Duis eget felis hendrerit erat gravida euismod. Sed lobortis pellentesque dui, nec efficitur lorem scelerisque vitae. Quisque vulputate nibh at aliquam semper. Integer cursus turpis eu augue consequat consequat. Pellentesque pharetra laoreet eros, a efficitur nibh pharetra et. Nulla ultricies lacus libero, auctor scelerisque mi convallis nec. Proin nibh odio, posuere in pretium blandit, venenatis quis lectus. Aliquam at urna a odio dictum luctus et imperdiet nibh. Vivamus condimentum sem nisi, quis molestie enim fringilla eu. Aenean a feugiat erat. Proin ornare odio ante. Nunc eget ex nec quam consequat facilisis non tincidunt risus. Mauris vulputate velit dolor, quis efficitur magna lobortis vel.\r\n\r\nMorbi ut tellus facilisis, gravida neque ac, varius magna. Morbi at sagittis augue. Donec eu dolor vitae neque congue lacinia a id enim. Suspendisse arcu mi, gravida ut nulla sit amet, rhoncus rhoncus sem. Pellentesque blandit porta odio quis finibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse faucibus est id vulputate mollis. In nibh diam, maximus nec pulvinar id, pretium in diam. Ut a rhoncus odio. Donec dictum molestie mattis. Suspendisse in felis a justo scelerisque vulputate vel bibendum mi. Morbi posuere luctus accumsan. Cras eu mattis augue, eget venenatis urna. Cras rutrum imperdiet sodales. Quisque at libero placerat, dapibus mauris luctus, posuere velit.\r\n\r\nSed condimentum consequat enim, euismod sodales arcu volutpat rhoncus. Proin ex purus, dictum pharetra pulvinar ac, tincidunt non metus. Proin placerat dui vitae metus molestie, a euismod arcu tincidunt. Donec ut quam lorem. Nam sed mi hendrerit, consectetur odio vel, scelerisque felis. Morbi fermentum velit velit. In non tempor massa, quis vulputate lacus. Nam cursus bibendum ultricies. Cras ut dignissim orci, quis vestibulum libero. Donec eu magna maximus, consectetur risus in, tincidunt lectus. Aenean tempus nisi ut arcu tincidunt, eu consectetur est luctus. Integer euismod erat nunc, consectetur rhoncus lorem efficitur ut. Nam odio tellus, molestie et ipsum non, interdum congue orci.', 'background_login_2.png', '', '', '', 'Aktif'),
+(2, 0, 'Cuci Mobil Kuning', 2147483647, '', '', 'Bandung', 20, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam arcu, rutrum vel tincidunt non, blandit sit amet mi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam erat volutpat. Duis eget felis hendrerit erat gravida euismod. Sed lobortis pellentesque dui, nec efficitur lorem scelerisque vitae. Quisque vulputate nibh at aliquam semper. Integer cursus turpis eu augue consequat consequat. Pellentesque pharetra laoreet eros, a efficitur nibh pharetra et. Nulla ultricies lacus libero, auctor scelerisque mi convallis nec. Proin nibh odio, posuere in pretium blandit, venenatis quis lectus. Aliquam at urna a odio dictum luctus et imperdiet nibh. Vivamus condimentum sem nisi, quis molestie enim fringilla eu. Aenean a feugiat erat. Proin ornare odio ante. Nunc eget ex nec quam consequat facilisis non tincidunt risus. Mauris vulputate velit dolor, quis efficitur magna lobortis vel.\r\n\r\nMorbi ut tellus facilisis, gravida neque ac, varius magna. Morbi at sagittis augue. Donec eu dolor vitae neque congue lacinia a id enim. Suspendisse arcu mi, gravida ut nulla sit amet, rhoncus rhoncus sem. Pellentesque blandit porta odio quis finibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse faucibus est id vulputate mollis. In nibh diam, maximus nec pulvinar id, pretium in diam. Ut a rhoncus odio. Donec dictum molestie mattis. Suspendisse in felis a justo scelerisque vulputate vel bibendum mi. Morbi posuere luctus accumsan. Cras eu mattis augue, eget venenatis urna. Cras rutrum imperdiet sodales. Quisque at libero placerat, dapibus mauris luctus, posuere velit.\r\n\r\nSed condimentum consequat enim, euismod sodales arcu volutpat rhoncus. Proin ex purus, dictum pharetra pulvinar ac, tincidunt non metus. Proin placerat dui vitae metus molestie, a euismod arcu tincidunt. Donec ut quam lorem. Nam sed mi hendrerit, consectetur odio vel, scelerisque felis. Morbi fermentum velit velit. In non tempor massa, quis vulputate lacus. Nam cursus bibendum ultricies. Cras ut dignissim orci, quis vestibulum libero. Donec eu magna maximus, consectetur risus in, tincidunt lectus. Aenean tempus nisi ut arcu tincidunt, eu consectetur est luctus. Integer euismod erat nunc, consectetur rhoncus lorem efficitur ut. Nam odio tellus, molestie et ipsum non, interdum congue orci.', 'background_login_1.png', '', '', '', 'Aktif'),
+(3, 18203818, 'fadhil', 1414, 'fadhilkesuma65@gmail.com', 'fadhil awawa', 'bandung', 0, 'saaaasdsad', '5.png', '', '', '', 'Aktif'),
+(4, 0, 'asd', 0, 'asd', 'asd', 'asd', 0, 'asd', '5.png', '', '', '', 'Aktif'),
+(5, 0, 'zxc', 0, 'xzc', 'zxc', 'zxc', 0, 'zxc', '1.jpg', '', '', '', 'Aktif'),
+(6, 123, 'carwash', 123, 'pemilik', 'ppemilik', 'car', 0, 'car', '', '', '', '', 'Aktif'),
+(7, 77777777, 'Bersih bersinar', 865432176, 'bojongsoang@gmail.com', 'bojongsoang', 'bojongsoang', 0, 'bersih bersinar sunlight', '', '', '', '', 'Aktif');
 
 -- --------------------------------------------------------
 
@@ -136,7 +139,8 @@ CREATE TABLE `pemesanan` (
 
 INSERT INTO `pemesanan` (`id_pemesanan`, `id_pelanggan`, `id_carwash`, `nama_pemesan`, `id_tipe`, `jenis`, `plat_nomor`, `tanggal_pesan`, `tanggal_cuci`, `jam_cuci`, `note`, `total_biaya`, `uang_bayar`, `status_bayar`, `status_pesan`, `bukti_bayar`) VALUES
 (7, 0, 1, 'Joko', 1, 'Kijang', 'B 2019 WKK', '2018-07-23', '2018-07-25', 10, 'Asal Bersih', 100000, 100000, 'lunas', 0, ''),
-(8, 0, 7, 'Bargundi', 2, 'Avanza', 'B 123 BK', '2018-07-23', '2018-07-24', 10, 'Langsung', 150000, 150000, 'lunas', 0, '');
+(8, 0, 7, 'Bargundi', 2, 'Avanza', 'B 123 BK', '2018-07-23', '2018-07-24', 10, 'Langsung', 150000, 150000, 'lunas', 0, ''),
+(9, 0, 1, 'Laily', 1, 'yaris', 'B 5555 XX', '2018-07-30', '2018-08-04', 14, 'bersih', 100000, 100000, 'Pending', 0, '');
 
 -- --------------------------------------------------------
 
@@ -241,7 +245,7 @@ ALTER TABLE `akun`
 -- AUTO_INCREMENT for table `carwash`
 --
 ALTER TABLE `carwash`
-  MODIFY `id_carwash` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_carwash` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `pelanggan`
 --
@@ -251,7 +255,7 @@ ALTER TABLE `pelanggan`
 -- AUTO_INCREMENT for table `pemesanan`
 --
 ALTER TABLE `pemesanan`
-  MODIFY `id_pemesanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_pemesanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `tipe_cuci`
 --
@@ -261,7 +265,7 @@ ALTER TABLE `tipe_cuci`
 -- AUTO_INCREMENT for table `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
