@@ -183,5 +183,32 @@ class Models extends CI_Model {
 		$this->db->order_by('jam_cuci', 'desc');
 		return $this->db->get();
 	}
+
+	public function updatelokasi(){
+        $data = array('id_carwash'=>$this->input->post('id_carwash'),
+            'lat'=>$this->input->post('lat'),
+            'lng'=>$this->input->post('lng'));
+        $this->db->where('id_carwash', $this->input->post('id_carwash'));//mengupdate berdasarkan id_carwash
+        $query = $this->db->update('carwash', $data);
+        return $query;
+    }
+    public function getbyidcarwash($id){
+        $this->db->where('id_carwash', $id);
+        $query = $this->db->get('carwash');
+        return $query;
+    }
+    public function createlokasi(){
+        $data = array('id_carwash' => $this->input->post('id_carwash'),
+            'lat'=>$this->input->post('lng'),
+            'lat'=>$this->input->post('lng'));
+        $query = $this->db->insert('carwash', $data);
+        return $query;
+    }
+    public function readlokasi($id){
+        $this->db->where('id_carwash', $id);//mengambil data koordinat carwash berdasarkan id_carwash
+        $query = $this->db->get('carwash');
+        return $query;
+    }
+    
 }
 ?>

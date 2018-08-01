@@ -18,7 +18,7 @@
         <!--left side nav-->
         <ul class="navbar-nav left-side-nav" id="accordion">
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-                <a class="nav-link" href="<?php echo base_url('kasir') ?>">
+                <a class="nav-link" href="<?php echo base_url('kasir/dashboard') ?>">
                     <i class="vl_dashboard"></i>
                     <span class="nav-link-text">Dashboard</span>
                 </a>
@@ -65,8 +65,6 @@
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userNav">
                     <a class="dropdown-item" href="#">My Profile</a>
                     <a class="dropdown-item" href="#">Account Settings</a>
-                    <a class="dropdown-item" href="#">Inbox <span class="badge badge-primary">3</span></a>
-                    <a class="dropdown-item" href="#">Message <span class="badge badge-success">5</span></a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="<?php echo site_url('login/logout'); ?>">Sign Out</a>
                 </div>

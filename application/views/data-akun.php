@@ -100,6 +100,7 @@
                                     <thead>
                                     <tr>
                                         <th>No</th>
+                                        <th>Carwash</th>
                                         <th>Username</th>
                                         <th>Nama Lengkap</th>
                                         <th>Email</th>
@@ -111,6 +112,7 @@
                                     <?php $no=1; foreach($akun as $value): ?>
                                     <tr>
                                         <td><?php echo $no; ?></td>
+                                        <td><?php echo $value->id_carwash; ?></td>
                                         <td><?php echo $value->username; ?></td>
                                         <td><?php echo $value->nama_lengkap; ?></td>
                                         <td><?php echo $value->email; ?></td>

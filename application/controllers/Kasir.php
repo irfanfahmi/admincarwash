@@ -33,6 +33,15 @@ class Kasir extends CI_Controller {
 			redirect('login');
 		}
 	}
+	public function dashboard() {
+		if ($this->session->userdata('logged_in')) {
+			$where = array('id_akun' => $this->session->userdata['logged_in']['id_akun']);
+			$data['carwash'] = $this->Models->fetch($where, 'carwash')->result();
+			$this->load->view('kasir/dashboard', $data);
+		} else {
+			redirect('login');
+		}
+	}
 
 	public function input_pesanan() {
 		date_default_timezone_set('Asia/Jakarta');

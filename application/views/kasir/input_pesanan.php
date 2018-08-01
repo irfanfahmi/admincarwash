@@ -200,7 +200,7 @@
                                         <!-- <input type="text" class="form-control" placeholder="Tanggal Cuci" name="tanggal_cuci" id="waktu"> -->
                                     </div>
                                 </div>
-                                <div class="form-group row">
+                                <!-- <div class="form-group row">
                                     <label class="col-sm-4 col-form-label col-form-label-sm">Biaya</label>
                                     <div class="col-sm-8">
                                         <input type="text" class="form-control" placeholder="Biaya" name="biaya" id="biaya">
@@ -220,7 +220,7 @@
                                     <div class="col-sm-8">
                                         <input type="text" class="form-control" placeholder="Uang diterima" name="uang" id="uang">
                                     </div>
-                                </div>
+                                </div> -->
                                 <div class="form-group row">
                                     <label class="col-sm-4 col-form-label col-form-label-sm">Note</label>
                                     <div class="col-sm-8">

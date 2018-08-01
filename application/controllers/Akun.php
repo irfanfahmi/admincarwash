@@ -72,9 +72,6 @@ class Akun extends CI_Controller {
 			'nama_pemilik' => $this->input->post('nama_pemilik'),
 			'alamat' => $this->input->post('alamat_carwash'),
 			'deskripsi' => $this->input->post('deskripsi'),
-			'no_rekening' => $this->input->post('no_rekening'),
-			'nama_rekening' => $this->input->post('nama_rekening'),
-			'nama_bank' => $this->input->post('nama_bank'),
 			'status' => 'Aktif',
 		);
 
@@ -104,6 +101,9 @@ class Akun extends CI_Controller {
 
 		$result = $this->Models->insert($data_kasir, 'akun');
 
+		
+
+		// $result = $this->Models->insert($data, 'akun');
 		if ($result) {
 			$this->session->set_flashdata('msg', '<div class="alert alert-success" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong class="d-block d-sm-inline-block-force">Berhasil!</strong> Data Berhasil Tersimpan.</div>');
 		} else {
@@ -148,5 +148,49 @@ class Akun extends CI_Controller {
 		$data['carwash'] = $this->Models->fetch($where, 'carwash')->result();
 		$this->load->view('data-carwash', $data);
 	}
+
+	function simpandaftarcarwash(){
+        if (!$this->input->is_ajax_request()) {
+            show_404();
+        }else{
+            $this->load->library('form_validation');
+            $this->form_validation->set_rules('id_carwash', 'Data Carwash', 'trim|required');
+            if ($this->form_validation->run()==false) {
+                $status = 'error';
+                $msg = validation_errors();
+            }else{
+                if ($this->Models->getbyidcarwash($this->input->post('id_carwash'))->num_rows()!=null) {
+                    $status = 'error';
+                    $msg = 'marker Carwash yang bersangkutan sudah ada, hapus terlebih dahulu';
+                }else{
+                    if ($this->Models->createlokasi()) {
+                        $status = 'success';
+                        $msg = 'data berhasil disimpan';
+                    }else{
+                        $status = 'error';
+                        $msg = 'terjadi kesalahan saat menyimpan koordinat';
+                    }
+                }
+            }
+            $this->output->set_content_type('application/json')->set_output(json_encode(array('status'=>$status,'msg'=>$msg)));
+        }
+    }
+
+    function viewmarkercarwash(){
+        if (!$this->input->is_ajax_request()) {
+            show_404();
+        }else{
+            if ($this->Models->getbyidcarwash($this->input->post('id_carwash'))->num_rows()!=null){
+                $status = 'success';
+                $msg = $this->Models->getbyidcarwash($this->input->post('id_carwash'))->result();
+                $datacarwash = $this->Models->readlokasi($this->input->post('id_carwash'))->result();
+            }else{
+                $status = 'error';
+                $msg = 'data tidak ditemukan';
+                $datacarwash = null;
+            }
+            $this->output->set_content_type('application/json')->set_output(json_encode(array('status'=>$status,'msg'=>$msg,'datacarwash'=>$datacarwash)));
+        }
+    }
 
 }
