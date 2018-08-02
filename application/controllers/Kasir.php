@@ -25,22 +25,12 @@ class Kasir extends CI_Controller {
 	}
 
 	public function index() {
-		if ($this->session->userdata('logged_in')) {
-			$where = array('id_akun' => $this->session->userdata['logged_in']['id_akun']);
-			$data['carwash'] = $this->Models->fetch($where, 'carwash')->result();
-			$this->load->view('kasir/index', $data);
-		} else {
-			redirect('login');
-		}
+		
+			$this->load->view('kasir/index');
+		
 	}
 	public function dashboard() {
-		if ($this->session->userdata('logged_in')) {
-			$where = array('id_akun' => $this->session->userdata['logged_in']['id_akun']);
-			$data['carwash'] = $this->Models->fetch($where, 'carwash')->result();
-			$this->load->view('kasir/dashboard', $data);
-		} else {
-			redirect('login');
-		}
+			$this->load->view('kasir/dashboard');
 	}
 
 	public function input_pesanan() {
@@ -80,9 +70,9 @@ class Kasir extends CI_Controller {
 			'tanggal_pesan' => date('Y-m-d', time()),
 			'tanggal_cuci' => $tanggal,
 			'jam_cuci' => $jam_cuci,
-			'total_biaya' => $this->input->post('biaya'),
-			'status_pesan' => $this->input->post('status'),
-			'uang_bayar' => $this->input->post('uang'),
+			 'total_biaya' => $this->input->post('biaya'),
+			// 'status_pesan' => $this->input->post('status'),
+			// 'uang_bayar' => $this->input->post('uang'),
 			'note' => $this->input->post('note'),
 		);
 
@@ -155,7 +145,7 @@ class Kasir extends CI_Controller {
 
 		$this->Models->insert($transaksi, 'transaksi');
 
-		redirect('Kasir/pesanan', 'refresh');
+		redirect('Kasir/transaksi', 'refresh');
 	}
 
 	public function lihat_pemesanan() {

@@ -130,7 +130,7 @@
                             <div class="form-group row">
                                     <label class="col-sm-4 col-form-label col-form-label-sm">Nama Pelangan</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control" placeholder="Nama Pelanggan" name="nama_pemesan">
+                                        <input type="text" class="form-control" required="true" placeholder="Nama Pelanggan" name="nama_pemesan">
                                     </div>
                                 </div>
 
@@ -200,13 +200,13 @@
                                         <!-- <input type="text" class="form-control" placeholder="Tanggal Cuci" name="tanggal_cuci" id="waktu"> -->
                                     </div>
                                 </div>
-                                <!-- <div class="form-group row">
+                                <div class="form-group row">
                                     <label class="col-sm-4 col-form-label col-form-label-sm">Biaya</label>
                                     <div class="col-sm-8">
                                         <input type="text" class="form-control" placeholder="Biaya" name="biaya" id="biaya">
                                     </div>
                                 </div>
-                                <div class="form-group row">
+                               <!--  <div class="form-group row">
                                     <label class="col-sm-4 col-form-label col-form-label-sm">Status Bayar</label>
                                     <div class="col-sm-8">
                                         <select class="form-control" name="status" id="status_bayar">

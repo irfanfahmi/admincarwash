@@ -25,13 +25,14 @@ class Pemilik extends CI_Controller {
 	}
 
 	public function index() {
-		if ($this->session->userdata('logged_in')) {
-			$where = array('id_akun' => $this->session->userdata['logged_in']['id_akun']);
-			$data['carwash'] = $this->Models->fetch($where, 'carwash')->result();
-			$this->load->view('mycarwash', $data);
-		} else {
-			redirect('login');
-		}
+
+		$id_carwash = $this->session->userdata('logged_in')['carwash'];
+		//$data['tra'] = $this->Models->get_transaksi($id_carwash)->result();
+		$data['transaksi'] = $this->Models->jumlahmobil($id_carwash);
+
+		//$queri = $this->db->query("SELECT count(id_transaksi) AS jumlah FROM transaksi WHERE $id_carwash");
+		$this->load->view('mycarwash', $data);
+		
 	}
 
 	public function data_carwash() {
@@ -121,5 +122,11 @@ class Pemilik extends CI_Controller {
 		$id_carwash = $this->session->userdata('logged_in')['carwash'];
 		$data['carwash'] = $this->Models->get_transaksi($id_carwash)->result();
 		$this->load->view('pemilik/data_transaksi', $data);
+	}
+
+	public function editprofil() {
+		$id_carwash = $this->session->userdata('logged_in')['carwash'];
+		$data['carwash'] = $this->Models->get_transaksi($id_carwash)->result();
+		$this->load->view('pemilik/edit_profil_pemilik', $data);
 	}
 }

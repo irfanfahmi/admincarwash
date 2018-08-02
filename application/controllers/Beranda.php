@@ -25,12 +25,24 @@ class Beranda extends CI_Controller {
 	}
 	public function index()
 	{	
-		if($this->session->userdata('logged_in')){
-			$this->load->view('index');
+
+		if ($this->session->userdata['logged_in']['jenis'] == 'Administrator') {
+			redirect('Akun');
+		} elseif ($this->session->userdata['logged_in']['jenis'] == 'Pemilik') {
+    		redirect('Pemilik');
+		} elseif($this->session->userdata['logged_in']['jenis'] == 'Kasir') {
+			redirect('Kasir');
 		}else{
 			redirect('login');
 		}
-		// $data['topcarwash'] = $this->Models->get_top_carwash()->result();
+
+
+		// if($this->session->userdata('logged_in')){
+		// 	$this->load->view('index');
+		// }else{
+			
+		// }
+		// // $data['topcarwash'] = $this->Models->get_top_carwash()->result();
 		
 	}
 	public function beranda()

@@ -18,7 +18,7 @@
         <!--left side nav-->
         <ul class="navbar-nav left-side-nav" id="accordion">
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-                <a class="nav-link" href="<?php echo base_url('kasir/dashboard') ?>">
+                <a class="nav-link" href="<?php echo base_url('kasir') ?>">
                     <i class="vl_dashboard"></i>
                     <span class="nav-link-text">Dashboard</span>
                 </a>

@@ -162,6 +162,11 @@ class Models extends CI_Model {
 		return $this->db->get();
 	}
 
+	public function jumlahmobil($id_carwash = false) {
+		$queri = $this->db->query("SELECT id_transaksi FROM transaksi WHERE id_carwash = $id_carwash");
+		return $queri->num_rows();
+	}
+
 	public function get_transaksi_by_id($id_transaksi) {
 		$this->db->select('t.id_transaksi, t.nama_pelanggan, t.nopol, t.merk_mobil, c.nama_tipe, t.tanggal, t.biaya');
 		$this->db->from('transaksi t');

@@ -79,7 +79,7 @@ if ($this->session->userdata['logged_in']['jenis'] == 'Administrator') {
                 <div class="creative-state-area basic-gradient">
                     <div class="row">
                         <div class="col-lg-7 col-12">
-                            <h4 class="creative-state-title">My CarWash</h4>
+                            <h4 class="creative-state-title">Laporan Mobil Masuk Hari Ini</h4>
                         </div>
                         <div class="col-lg-5  col-12 text-lg-right">
                             <div class="row short-states mb-lg-0 mb-4">
@@ -93,24 +93,21 @@ if ($this->session->userdata['logged_in']['jenis'] == 'Administrator') {
                                 </div>
                             </div>
                         </div>
-                        <?php foreach ($carwash as $value): ?>
+                        
                         <div class="col-lg-4 col-md-6 mb-4">
                             <div class="creative-state-icon bg-purple text-center pull-left">
                                 <i class="vl_dollar-on-hand"></i>
                             </div>
                             <div class="creative-state-info text-center pull-left">
-                            <h3 class="mt-4"><?php echo $value->nama; ?></h3>
-                                <h3 class="mt-4">23214</h3>
-                                <p class="mb-0">total profit</p>
-                                <div class="clearfix"></div>
-                                <h3 class="mt-4">12</h3>
-                                <p class="mb-0"><a href="">total antrian</a></p>
+
+                            <h3 class="mt-4"><?php echo $transaksi; ?></h3>
+                                <p class="mb-0"><a href="">total mobil hari ini</a></p>
                                 <div class="">
                                     <canvas id="state_profit_chart" height="80"></canvas>
                                 </div>
                             </div>
                         </div>
-                    <?php endforeach;?>
+                        
                     </div>
                 </div>
             </div>
