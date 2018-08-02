@@ -97,21 +97,34 @@
                                         <th>Tanggal</th>
                                         <th>Jenis</th>
                                         <th>Biaya</th>
-                                        <th>Aksi</th>
+                                       
                                         <!-- <th>Aksi</th> -->
                                     </tr>
                                     </thead>
-                                    <!-- <tfoot>
+                                    <?php
+                                    $total = 0;
+                                    ?>
+                                    <?php $no = 1;foreach ($carwash as $value): ?>
+
+                                            <?php 
+                                            $maybe=$value->biaya;
+                                            $total=$maybe+$total; ?>
+                                            <?php $no++;endforeach;?>
+                                    <tfoot>
                                     <tr>
-                                        <th>No</th>
-                                        <th>Nama</th>
-                                        <th>Alamat</th>
-                                        <th>Biaya</th>
-                                        <th>Kuota</th>
-                                        <th>Aksi</th>
+                                        <th> </th>
+                                        <th> </th>
+                                        <th> </th>
+                                        <th> </th>
+                                        <th> </th>
+                                        <th>Total </th>
+                                        <th><?php echo number_format($total,0) ?></th>
+
+                                        
                                     </tr>
-                                    </tfoot> -->
+                                    </tfoot>
                                     <tbody>
+                                   
                                     <?php $no = 1;foreach ($carwash as $value): ?>
                                     <tr>
                                         <td><?php echo $no; ?></td>
@@ -119,30 +132,14 @@
                                         <td><?php echo $value->merk_mobil; ?></td>
                                         <td><?php echo $value->nopol; ?></td>
                                         <td><?php echo date("d F Y", strtotime($value->tanggal)); ?></td>
-                                         <td><?php echo $value->nama_tipe; ?></td>
-                                        <!-- <td>
-                                            <?php if ($value->id_pemesanan == 0): ?>
-                                            Langsung
-                                            <?php else: ?>
-                                                <?php echo $value->nama_pelanggan; ?>
-                                            <?php endif?>
-                                        </td>  -->
+                                        <td><?php echo $value->nama_tipe; ?></td>
                                         <td><?php echo $value->biaya; ?></td>
-                                        <td><a href="" class="btn btn-success" >Cetak<i class="icon-pencil"></i></a></td>
-
-                                        <!-- <td>
-                                            <?php if ($value->status == 'Aktif') {?>
-                                                <a href="<?php echo site_url('pemilik/nonaktifkan_carwash/') . $value->id_carwash; ?>" class="btn btn-warning"><i class="fa fa-times"></i></a>
-                                                <a href="" class="btn btn-success"><i class="icon-pencil"></i></a>
-                                                <a href="" class="btn btn-danger"><i class="icon-trash"></i></a>
-                                            <?php } else {?>
-                                                <a href="<?php echo site_url('pemilik/aktifkan_carwash/') . $value->id_carwash; ?>" class="btn btn-warning"><i class="fa fa-check"></i></a>
-                                                <a href="" class="btn btn-success"><i class="icon-pencil"></i></a>
-                                                <a href="" class="btn btn-danger"><i class="icon-trash"></i></a>
-                                            <?php }?>
-                                        </td> -->
-                                    </tr>
+                            
+                                     
                                     <?php $no++;endforeach;?>
+                                     </tr>
+                                    <td></td>
+                                    
                                     </tbody>
                                 </table>
                             </div>

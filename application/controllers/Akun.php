@@ -30,7 +30,9 @@ class Akun extends CI_Controller {
 	}
 
 	public function input_akun() {
+		$data['akun'] = $this->Models->get('akun')->result();
 		// $data['carwash'] = $this->Models->get_id_carwash($id_carwash);
+		$id_carwash = $this->session->userdata('logged_in')['carwash'];
 		$data['carwash'] = $this->Models->get('carwash')->result();
 		$this->load->view('input-akun', $data);
 	}

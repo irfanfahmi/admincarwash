@@ -114,31 +114,37 @@ if ($this->session->userdata['logged_in']['jenis'] == 'Administrator') {
                                     <div class="form-group row">
                                         <label class="col-sm-4 col-form-label col-form-label-sm">Nama Carwash</label>
                                         <div class="col-sm-8">
-                                            <input type="text" class="form-control" placeholder="Nama Carwash" name="nama_carwash" text="">
+                                        <select class="form-control" id="option_s4" name="nama_carwash">
+                                            <option></option>
+                                            <?php foreach ($carwash as $item): ?>
+                                                <option value="<?php echo $item->id_carwash ?>"><?php echo $item->nama ?></option>
+                                            <?php endforeach?>
+                                        </select>
+                                        
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-sm-4 col-form-label col-form-label-sm">No Izin</label>
                                         <div class="col-sm-8">
-                                            <input type="number" class="form-control" placeholder="Kontak CarWash(HP/Telpon)" name="izin_carwash">
+                                            <input type="number" class="form-control"  required="true" placeholder="Kontak CarWash(HP/Telpon)" name="izin_carwash">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-sm-4 col-form-label col-form-label-sm">Kontak</label>
                                         <div class="col-sm-8">
-                                            <input type="number" class="form-control" placeholder="Kontak CarWash(HP/Telpon)" name="kontak_carwash">
+                                            <input type="number" class="form-control"  required="true" placeholder="Kontak CarWash(HP/Telpon)" name="kontak_carwash">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-sm-4 col-form-label col-form-label-sm">Alamat Lengkap</label>
                                         <div class="col-sm-8">
-                                            <textarea class="form-control" name="alamat_carwash"></textarea>
+                                            <textarea class="form-control"  required="true"  name="alamat_carwash"></textarea>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-sm-4 col-form-label col-form-label-sm">Deskripsi CarWash</label>
                                         <div class="col-sm-8">
-                                            <textarea class="form-control" name="deskripsi"></textarea>
+                                            <textarea class="form-control"  required="true" name="deskripsi"></textarea>
                                         </div>
                                     </div>
 
@@ -146,19 +152,19 @@ if ($this->session->userdata['logged_in']['jenis'] == 'Administrator') {
                                     <div class="form-group row">
                                         <label class="col-sm-4 col-form-label col-form-label-sm">Nama Bank</label>
                                         <div class="col-sm-8">
-                                            <input type="text" class="form-control" placeholder="Nama Bank" name="nama_bank">
+                                            <input type="text" class="form-control"  required="true" placeholder="Nama Bank" name="nama_bank">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-sm-4 col-form-label col-form-label-sm">Nama Rekening</label>
                                         <div class="col-sm-8">
-                                            <input type="text" class="form-control" placeholder="Nama Rekening" name="nama_rekening">
+                                            <input type="text" class="form-control"  required="true" placeholder="Nama Rekening" name="nama_rekening">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-sm-4 col-form-label col-form-label-sm">No Rekening</label>
                                         <div class="col-sm-8">
-                                            <input type="text" class="form-control" placeholder="No Rekening" name="no_rekening">
+                                            <input type="text" class="form-control"  required="true" placeholder="No Rekening" name="no_rekening">
                                         </div>
                                     </div>
 
@@ -170,31 +176,31 @@ if ($this->session->userdata['logged_in']['jenis'] == 'Administrator') {
                                     <div class="form-group row">
                                         <label class="col-sm-4 col-form-label col-form-label-sm">Username</label>
                                         <div class="col-sm-8">
-                                            <input type="text" class="form-control" placeholder="Username" name="username_pemilik">
+                                            <input type="text" class="form-control"  required="true" placeholder="Username" name="username_pemilik">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-sm-4 col-form-label col-form-label-sm">Password</label>
                                         <div class="col-sm-8">
-                                            <input type="password" class="form-control" placeholder="Password" name="password_pemilik">
+                                            <input type="password" class="form-control"  required="true" placeholder="Password" name="password_pemilik">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-sm-4 col-form-label col-form-label-sm">Nama Lengkap</label>
                                         <div class="col-sm-8">
-                                            <input type="text" class="form-control" placeholder="Nama Lengkap" name="nama_pemilik" text="">
+                                            <input type="text" class="form-control"  required="true" placeholder="Nama Lengkap" name="nama_pemilik" text="">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-sm-4 col-form-label col-form-label-sm">Email Address</label>
                                         <div class="col-sm-8">
-                                            <input type="text" class="form-control" placeholder="Email Address" name="email_pemilik" text="">
+                                            <input type="text" class="form-control"  required="true" placeholder="Email Address" name="email_pemilik" text="">
                                         </div>
                                     </div>
                                      <div class="form-group row">
                                         <label class="col-sm-4 col-form-label col-form-label-sm">Tipe</label>
                                         <div class="col-sm-8">
-                                            <input type="text" class="form-control" placeholder="Pemilik" name="level_pemilik" text="Pemilik" disabled="true">
+                                            <input type="text" class="form-control"  required="true" placeholder="Pemilik" name="level_pemilik" text="Pemilik" disabled="true">
                                         </div>
                                     </div>
 
@@ -206,31 +212,31 @@ if ($this->session->userdata['logged_in']['jenis'] == 'Administrator') {
                                     <div class="form-group row">
                                         <label class="col-sm-4 col-form-label col-form-label-sm">Username</label>
                                         <div class="col-sm-8">
-                                            <input type="text" class="form-control" placeholder="Username" name="username_kasir">
+                                            <input type="text" class="form-control"  required="true" placeholder="Username" name="username_kasir">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-sm-4 col-form-label col-form-label-sm">Password</label>
                                         <div class="col-sm-8">
-                                            <input type="password" class="form-control" placeholder="Password" name="password_kasir">
+                                            <input type="password" class="form-control"  required="true" placeholder="Password" name="password_kasir">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-sm-4 col-form-label col-form-label-sm">Nama Lengkap</label>
                                         <div class="col-sm-8">
-                                            <input type="text" class="form-control" placeholder="Nama Lengkap" name="nama_kasir" text="">
+                                            <input type="text" class="form-control"  required="true" placeholder="Nama Lengkap" name="nama_kasir" text="">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-sm-4 col-form-label col-form-label-sm">Email Address</label>
                                         <div class="col-sm-8">
-                                            <input type="text" class="form-control" placeholder="Email Address" name="email_kasir" text="">
+                                            <input type="text" class="form-control"  required="true" placeholder="Email Address" name="email_kasir" text="">
                                         </div>
                                     </div>
                                      <div class="form-group row">
                                         <label class="col-sm-4 col-form-label col-form-label-sm">Tipe</label>
                                         <div class="col-sm-8">
-                                            <input type="text" class="form-control" placeholder="Kasir" name="level_kasir" text="Kasir" disabled="true">
+                                            <input type="text" class="form-control"  required="true" placeholder="Kasir" name="level_kasir" text="Kasir" disabled="true">
                                         </div>
                                     </div>
 

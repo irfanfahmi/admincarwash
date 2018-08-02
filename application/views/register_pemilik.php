@@ -46,63 +46,26 @@ Author: Media City
     </div>
   </div>
 <!-- end preloader --> 
-<!--  top bar -->
-  <div class="top-bar hidden-xs">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6 col-sm-6">
-          <div class="info-bar">
-            <ul>
-              <li><i class="fa fa-envelope" aria-hidden="true"></i> info@carwash.com</li>
-              <li>|</li>
-              <li><i class="fa fa-phone" aria-hidden="true"></i>(+01) 123 456 7890</li>
-            </ul>
-          </div>          
-        </div>
-        <div class="col-md-6 col-sm-6">
-          <div class="top-bar-right">
-            <div class="top-menu hidden-sm">
-              <ul>
-                <li><a href="#">Schedule</a></li>
-                <li>|</li>
-                <li><a href="#">News</a></li>
-                <li>|</li>
-                <li><a href="#">Faq</a></li>
-              </ul>
-            </div>
-            <div class="social-icon">
-              <ul>
-                <li><a href="#" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                <li><a href="#" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                <li><a href="#" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                <li><a href="#" target="_blank"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-<!--  end top bar -->
+
 <!--  navigation -->
   <div class="nav-bar">
     <div class="container">
       <div class="row">
         <div class="col-sm-4">
           <div class="logo">
-            <a href="index-2.html"><img src="<?php echo base_url('assets_dashboard/'); ?>images/logo.png" alt="logo"></a>
+            <a href="index-2.html"><img src="<?php echo base_url('assets_dashboard/'); ?>images/logo_carwash.png" alt="logo"></a>
           </div>
         </div>
         <div class="col-sm-8">
           <div class="navigation">
             <div id="cssmenu">
               <ul>
-                <li><a href="http://localhost/admincarwash/">Home</a></li>                
+                <li><a href="<?php echo base_url(); ?>">Home</a></li>                
                 <li><a href="#">Daftar Carwash</a></li>                
               
-                <li><a href="#">Services</a>
-                <li style="background-color:#613A43; color: white;"><a href="http://localhost/admincarwash/login" style="color:white;">Login</a>
-                <li style="background-color:#36384C; color: white;"><a href="http://localhost/admincarwash/Beranda/register" style="color:white;" >Register</a>
+                
+                <li style="background-color:#613A43; color: white;"><a href="<?php echo base_url(); ?>login" style="color:white;">Login</a>
+                <li style="background-color:#36384C; color: white;"><a href="<?php echo base_url(); ?>Beranda/register" style="color:white;" >Register</a>
                 </li>                
               </ul>
             </div>
@@ -130,7 +93,7 @@ Author: Media City
             <form id="appointment-form" class="appointment-form" method="post" action="<?php echo site_url('Beranda/input_data_akun'); ?>">
 
             <h5 class="form-heading-title">
-            <span class="form-heading-no">1.</span>Carwash Detail</h5>
+            <span class="form-heading-no">1.</span>INFORMASI CARWASH</h5>
               <div class="row">
                 <div class="col-sm-4">
                   <input type="text" class="form-control" id="name" name="nama" placeholder="Nama Carwash" required>
@@ -151,7 +114,7 @@ Author: Media City
                 </div>
 
                 <h5 class="form-heading-title">
-            <span class="form-heading-no">2.</span>Pemilik Detail</h5>
+            <span class="form-heading-no">2.</span>INFORMASI PEMILIK</h5>
               <div class="row">
                 <div class="col-sm-4">
                   <input type="text" class="form-control" id="name" name="nama_pemilik" placeholder="Nama Pemilik" required>

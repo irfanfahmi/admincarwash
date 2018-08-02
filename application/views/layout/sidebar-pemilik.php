@@ -18,14 +18,14 @@
         <!--left side nav-->
         <ul class="navbar-nav left-side-nav" id="accordion">
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-                <a class="nav-link" href="http://localhost/admincarwash/beranda">
+                <a class="nav-link" href="<?php echo base_url(); ?>beranda">
                     <i class="vl_dashboard"></i>
                     <span class="nav-link-text">Dashboard</span>
                 </a>
             </li>
             
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="My Carwash">
-               <a class="nav-link" href="http://localhost/admincarwash/beranda">
+               <a class="nav-link" href="<?php echo base_url(); ?>beranda">
                     <i class="ti-car"></i>
                     <span class="nav-link-text">Laporan Mobil Masuk </span>
                  </a>

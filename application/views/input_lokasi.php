@@ -38,6 +38,10 @@ $(document).on('click','#clearmap',clearmap)
         };
  
         map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+        var autocomplete = new google.maps.places.Autocomplete(input);
+            autocomplete.bindTo('bounds', map);
+
  
         // Add a listener for the click event
         google.maps.event.addListener(map, 'click', addLatLng);
@@ -48,6 +52,9 @@ $(document).on('click','#clearmap',clearmap)
           $('#longitude').val(lng);
           //alert(lat +" dan "+lng);
         });
+
+        
+
 
     }
 
